@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusShop</title>
+    <link rel="shortcut icon" href="storage/img/logo.webp" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <div class="body__left">
+        <header id="header">
+            <h1>CampusShop</h1>
+        </header>
+        <nav class="body__pages">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class='bx bx-menu'></i>
+            </label>
+            <ul class="nav__menu">
+                <button onclick="index()"><li id="all" class="active">Todos los productos</li></button>
+                <button onclick="abrigos()"><li id="hoodies">Abrigos</li></button>
+                <button onclick="camisetas()"><li id="tshirt">Camisetas</li></button>
+                <button onclick="pantalones()"><li id="pants">Pantalones</li></button>
+            </ul>
+        </nav>
+        <button onclick="cart()"><i class='bx bx-cart carrito' id="carrito" alt="carrito compras"><div id="counter"></div></i></button>
+        <p>© 2023 Camper</p>
+    </div>
+    <div class="body__products body_products_index">
+        <h1>Todos los productos</h1>
+        <div class="contenedor" id="contenedor">
+            <div>
+                <img src="storage/img/blackJacket.webp" alt="chaqueta 1">
+                <div class="informacion">
+                    <p>black leather jacket</p>
+                    <p class="precio">$100000</p>
+                    <button onclick="botones(1)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/blackLongJacket.webp" alt="chaqueta 2">
+                <div class="informacion">
+                    <p>Long black jacket</p>
+                    <p class="precio">$180000</p>
+                    <button onclick="botones(2)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/blueLongJacket.webp" alt="chaqueta 3">
+                <div class="informacion">
+                    <p>Long blue jacket</p>
+                    <p class="precio">$180000</p>
+                    <button onclick="botones(3)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/whiteLongJacket.webp" alt="chaqueta 4">
+                <div class="informacion">
+                    <p>Long white jacket</p>
+                    <p class="precio">$180000</p>
+                    <button onclick="botones(4)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/omegaHoodie.webp" alt="chaqueta 5">
+                <div class="informacion">
+                    <p>Black formal jacket</p>
+                    <p class="precio">$160000</p>
+                    <button onclick="botones(5)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/pantalonMilitar.webp" alt="pantalon 1">
+                <div class="informacion">
+                    <p>Military pant men</p>
+                    <p class="precio">$100000</p>
+                    <button onclick="botones(6)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/pantalonBeige.webp" alt="pantalon 2">
+                <div class="informacion">
+                    <p>Formal beige pan</p>
+                    <p class="precio">$100000</p>
+                    <button onclick="botones(7)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/pantalon.webp" alt="pantalon 3">
+                <div class="informacion">
+                    <p>Gray jogger</p>
+                    <p class="precio">$90000</p>
+                    <button onclick="botones(8)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/militarMujer.webp" alt="pantalon 4">
+                <div class="informacion">
+                    <p>Military pant women</p>
+                    <p class="precio">$100000</p>
+                    <button onclick="botones(9)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/formalPantMen.webp" alt="pantalon 5">
+                <div class="informacion">
+                    <p>Formal pant men</p>
+                    <p class="precio">$100000</p>
+                    <button onclick="botones(10)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/poloWhite.webp" alt="camisetas 1">
+                <div class="informacion">
+                    <p>White polo</p>
+                    <p class="precio">$60000</p>
+                    <button onclick="botones(11)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/nezukoTshirt.webp" alt="camisetas 2">
+                <div class="informacion">
+                    <p>Nezuko t-shirt</p>
+                    <p class="precio">$60000</p>
+                    <button onclick="botones(12)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/iluminatiTshirt.webp" alt="camisetas 3">
+                <div class="informacion">
+                    <p>Rokstar t-shirt</p>
+                    <p class="precio">$60000</p>
+                    <button onclick="botones(13)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/deportivaWhite.webp" alt="camisetas 4">
+                <div class="informacion">
+                    <p>Deportive t-shirt white</p>
+                    <p class="precio">$60000</p>
+                    <button onclick="botones(14)">Buy</button>
+                </div>
+            </div>
+            <div>
+                <img src="storage/img/deportivaTshirt.webp" alt="camisetas 5">
+                <div class="informacion">
+                    <p>Deportive t-shirt blue</p>
+                    <p class="precio">$60000</p>
+                    <button onclick="botones(15)">Buy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

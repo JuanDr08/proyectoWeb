@@ -1,0 +1,200 @@
+@import url(variables.css);
+@import url(style.css);
+
+.contenedor_carritos > div > img {
+    border-radius: 20px 20px 20px 20px;
+}
+
+
+
+#contenedor_cart {
+    padding: 20px 0;
+    height: 80%;
+    width: 100%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-hover) var(--color-secundario);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2vw;
+    margin-bottom: 1vw;
+}
+.contenedor_carritos > div {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1vw;
+    padding-bottom: 0 !important;
+}
+
+.contenedor_carritos > div > button i {
+    font-size: 1.5vw;
+    color: var(--color-hover);
+}
+.contenedor_carritos > div > button  {
+    /* background: none; */
+    border: none;
+    cursor: pointer;
+    transition: 1s;
+    background: none;
+}
+.contenedor_carritos > div > button:active > i{
+    color: red;
+}
+.contenedor_carritos > div > button:hover > i {
+    scale: 1.1;
+}
+.contenedor_carritos > div > div {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+.informacion_cart,
+.cantidad,
+.sub {
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+.informacion_cart p:first-child,
+.cantidad p:first-child,
+.sub p:first-child {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3vw;
+    font-weight: 600; 
+    color: var(--color-hover);
+    text-align: center;
+    
+}
+.cantidad p:last-child,
+.informacion_cart p:last-child,
+.sub p:last-child {
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1vw;
+}
+
+.pay__process {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+.clean__cart {
+    width: 10vw;
+    height: max-content;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw;
+    background-color: var(--color-hover);
+    border-radius: 50px;
+    transition: .3s;
+}
+.clean__cart button {
+    font-size: 1.3vw;
+    background: none;
+    border: none;
+    color: var(--color-secundario);
+}
+.clean__cart:active {
+    text-shadow: 0 0 5px var(--color-secundario);
+    scale: 1.1;
+    box-shadow: 0 0 15px var(--color-hover);
+}
+
+.buy__now {
+    display: flex;
+    justify-content: space-evenly;
+    width: 17vw;
+    padding: 1%;
+    background: var(--color-cards);
+    border-radius: 20px;
+    font-size: 1vw;
+    font-weight: 500;
+    color: var(--color-hover);
+    text-align: center;
+}
+.total {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.buy__now button {
+    border-radius: 50px;
+    border: none;
+    background: var(--color-hover);
+    color: var(--color-secundario);
+    padding: .8vw;
+    font-weight: 500;
+    font-size: 1vw;
+    cursor: pointer;
+    transition: .3s;
+}
+.buy__now button:active {
+    scale: 1.1;
+    box-shadow: 0 0 15px var(--color-hover);
+    text-shadow: 0 0 5px var(--color-secundario);
+}
+@media (width < 1024px) and (height > 629px), (width = 1024px) and (height = 1366px)  {
+
+    #contenedor_cart {
+        height: 80%;
+        gap: 5vh;
+        margin-bottom: 0;
+    }
+    .contenedor_carritos > div img {
+        width: 15vh;
+        height: 15vh;
+    }
+    .contenedor_carritos > div {
+        width: 90%;
+        animation-range: entry 10% cover 12% !important;
+    }
+    .contenedor_carritos > div button i {
+        font-size: 2vh;
+    }
+    .contenedor_carritos > div > div {
+        flex-direction: column;
+        gap: 0;
+    }
+    .informacion_cart,
+    .cantidad,
+    .sub {
+        gap: 0;
+    }
+    .informacion_cart p:first-child,
+    .cantidad p:first-child,
+    .sub p:first-child {
+        font-size: 2vh;
+    }
+    .cantidad p:last-child,
+    .informacion_cart p:last-child,
+    .sub p:last-child {
+        font-size: 1.5vh;
+    }
+    .clean__cart {
+        width: 15vh;
+        padding: 1vh;
+    }
+    .clean__cart button {
+        font-size: 1.5vh;
+    }
+    .buy__now {
+        width: 17vh;
+        padding: 1vh;
+        font-size: 1.3vh;
+    }
+    .buy__now button {
+        font-size: 1.3vh;
+        padding: .8vh;
+    }
+}
