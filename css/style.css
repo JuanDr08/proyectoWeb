@@ -87,18 +87,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    word-spacing: 10px;
+
 }
 .main__home__txt h1 {
     text-transform: capitalize;
     font-size: 6vh;
     font-weight: 500;
-    word-spacing: 10px;
     color: var(--color--buttons);
 }
 .main__home__txt p {
     color: var(--color--font);
     font-size: 3vh;
-    word-spacing: 5px;
     line-height: 1;
 }
 .main__home__txt button {
@@ -109,7 +109,6 @@ body {
     font-size: 2vh;
     padding: 5px 15px;
     margin-top: 30px;
-    word-spacing: 5px;
 }
 
 .main__home__img {
@@ -367,5 +366,43 @@ body {
 }
 
 @media (width > 1024px), ( 280px <= height < 1000px) and (width >= 600px){
-    
+    .checkbtn {
+        display: none;
+    }
+    .header {
+        padding: 0 5vh;
+    }
+    .header h3 {
+        font-size: 4vh;
+    }
+    .nav__menu {
+        opacity: 1;
+        height: auto;
+        flex-direction: row;
+        position: static;
+        background: none;
+        gap: 6vh;
+    }
+    .nav ul li > a {
+        font-size: 3vh;
+    }
+    /*Home section*/
+    #main__home {
+        display: grid;
+        place-items: center;
+        grid-template:
+        "txt img"1fr / 1fr 1fr;
+    }
+    .main__home__txt {
+        align-items: flex-start;
+    }
+    .main__home__txt h1 {
+        font-size: 6vw;
+    }
+    .main__home__txt p {
+        font-size: 3vw;
+    }
+    .main__home__img {
+        width: 35vw;
+    }
 }
