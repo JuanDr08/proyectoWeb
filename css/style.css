@@ -365,3 +365,7 @@ body {
     font-size: 3.5vh;
     color: var(--color--buttons);
 }
+
+@media (width > 1024px), ( 280px <= height < 1000px) and (width >= 600px){
+    
+}
