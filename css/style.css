@@ -214,6 +214,7 @@ ul {
     text-transform: capitalize;
     width: 35vh;
     padding: 15px 0;
+    border: 5px double;
 }
 .menu__card img{
     width: 70%;
@@ -222,6 +223,7 @@ ul {
 .menu__card article h3 {
     font-weight: 600;
     font-size: 2vh;
+    color: var(--color--titles);
 }
 .menu__card p {
     font-weight: 500;
@@ -279,4 +281,37 @@ ul {
 .service__card img{
     width: 70%;
     object-fit: contain;
+}
+
+/*SECTION WORD*/
+
+#main__word {
+    height: 40dvh;
+    padding: 5vh 4vh;
+    word-spacing: 5px;
+}
+
+#main__word > section {
+    background: var(--color--cards);
+    height: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 5px double;
+}
+#main__word > section h1 {
+    font-size: 3vh;
+    font-weight: 500;
+    color: var(--color--titles);
+}
+#main__word section button {
+    border: none;
+    background: var(--color--buttons);
+    text-transform: capitalize;
+    padding: 5px 20px;
+    font-weight: 500;
+    font-size: 1.7vh;
+    color: var(--color--font);
 }
