@@ -54,7 +54,7 @@ ul {
     right: 100%;
     top: 80px;
     opacity: 0;
-    transition: 1s;
+    transition: .5s;
 }
 .nav ul li {
     display: block;
@@ -113,24 +113,24 @@ ul {
 }
 
 .main__home__img {
-    width: 100%;
-    height: 50%;
+    width: 35vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .main__home__img img {
-    width: 70%;
+    width: 100%;
     object-fit: contain;
 }
 
 /*SECTION ABOUT US*/
 
 #main__about {
-    height: calc(100dvh - 80px);
+    height: calc(100dvh);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .main__about__txt{
@@ -144,7 +144,9 @@ ul {
     text-align: center;
     word-spacing: 5px;
 }
-.main__about__txt > p, h2, button {
+.main__about__txt > p,
+.main__about__txt h2,
+.main__about__txt button {
     margin: .6vh 0;
     color: var(--color--font);
 }
@@ -169,13 +171,64 @@ ul {
     font-size: 2vh;
 }
 .main__about__img {
-    height: 50%;
-    width: 100%;
+    width: 35vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .main__about__img img {
-    width: 70%;
+    width: 100%;
     object-fit: contain;
+}
+
+/*SECTION MENU*/
+
+#main__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 80px 40px 10px 40px;
+    height: max-content;
+    word-spacing: 5px;
+}
+.main__menu__title  h1{
+    color: var(--color--font);
+    font-weight: 500;
+    font-size: 3.5vh;
+}
+.main__menu__title p {
+    color: var(--color--buttons);
+    text-transform: capitalize;
+    font-size: 2vh;
+    margin-bottom: 10px;
+}
+.main__menu__img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu__card {
+    background: var(--color--cards);
+    margin: 20px  0;
+    text-transform: capitalize;
+    width: 35vh;
+    padding: 15px 0;
+}
+.menu__card img{
+    width: 20vh;
+    object-fit: contain;
+}
+.menu__card article h3 {
+    font-weight: 600;
+    font-size: 2vh;
+}
+.menu__card p {
+    font-weight: 500;
+    font-size: 1.8vh;
+}
+.menu__card small {
+    font-weight: 400;
+    font-size: 2vh;
+    color: var(--color--buttons);
 }
