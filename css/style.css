@@ -8,6 +8,10 @@
     list-style: none;
     text-decoration: none;
 }
+
+html {
+    scroll-behavior: smooth;
+}
 body {
     background: var(--color--body);
     height: max-content;
@@ -18,6 +22,9 @@ body {
     align-items: center;
     height: 80px;
     padding: 0 20px;
+    position: sticky;
+    top: 0;
+    background: var(--color--body);
 }
 .header h3 {
     font-size: 2em;
@@ -90,7 +97,8 @@ ul {
 }
 .main__home__txt p {
     color: var(--color--font);
-    font-size: 1.7em;
+    font-size: 3vh;
+    word-spacing: 5px;
     line-height: 1;
 }
 .main__home__txt button {
@@ -98,9 +106,10 @@ ul {
     border: none;
     text-transform: capitalize;
     color: var(--color--font);
-    font-size: 1.1em;
+    font-size: 2vh;
     padding: 5px 15px;
     margin-top: 30px;
+    word-spacing: 5px;
 }
 
 .main__home__img {
@@ -108,9 +117,65 @@ ul {
     height: 50%;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 .main__home__img img {
+    width: 70%;
+    object-fit: contain;
+}
+
+/*SECTION ABOUT US*/
+
+#main__about {
+    height: calc(100dvh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__about__txt{
+    height: 50%;
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-align: center;
+    word-spacing: 5px;
+}
+.main__about__txt > p, h2, button {
+    margin: .6vh 0;
+    color: var(--color--font);
+}
+.main__about__txt > h2 {
+    font-size: 3.5vh;
+    font-weight: 500;
+}
+.main__about__txt p:first-child {
+    color: var(--color--buttons);
+    text-transform: capitalize;
+    font-size: 2vh;
+}
+.main__about__txt h2 ~ p {
+    font-size: 1.9vh;
+}
+.main__about__txt button {
+    border: none;
+    background: var(--color--buttons);
+    text-transform: capitalize;
+    padding: 5px 20px;
+    font-weight: 500;
+    font-size: 2vh;
+}
+.main__about__img {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main__about__img img {
+    width: 70%;
     object-fit: contain;
 }
