@@ -216,7 +216,7 @@ ul {
     padding: 15px 0;
 }
 .menu__card img{
-    width: 20vh;
+    width: 70%;
     object-fit: contain;
 }
 .menu__card article h3 {
@@ -231,4 +231,52 @@ ul {
     font-weight: 400;
     font-size: 2vh;
     color: var(--color--buttons);
+}
+
+/*SECTION SERVICES*/
+
+#main__services {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 80px 40px 10px 40px;
+    height: max-content;
+    word-spacing: 5px;
+    color: var(--color--cards);
+}
+.main__services__title  h1{
+    color: var(--color--font);
+    font-weight: 500;
+    font-size: 3.5vh;
+}
+.main__services__title p {
+    color: var(--color--buttons);
+    text-transform: capitalize;
+    font-size: 2vh;
+    margin-bottom: 10px;
+}
+.service__card > article h3 {
+    font-weight: 600;
+    font-size: 2vh;
+    color: var(--color--buttons);
+}
+.service__card p {
+    font-weight: 500;
+    font-size: 1.8vh;
+}
+.main__services__img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.service__card {
+    margin: 20px  0;
+    text-transform: capitalize;
+    width: 35vh;
+    padding: 15px 0;
+}
+.service__card img{
+    width: 70%;
+    object-fit: contain;
 }
