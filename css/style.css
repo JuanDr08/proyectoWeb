@@ -16,6 +16,11 @@ body {
     background: var(--color--body);
     height: max-content;
 }
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .header {
     display: flex;
     justify-content: space-between;
@@ -139,7 +144,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     text-align: center;
     word-spacing: 5px;
 }
@@ -373,7 +377,7 @@ body {
         padding: 0 5vh;
     }
     .header h3 {
-        font-size: 4vh;
+        font-size: 2.5vw;
     }
     .nav__menu {
         opacity: 1;
@@ -381,17 +385,17 @@ body {
         flex-direction: row;
         position: static;
         background: none;
-        gap: 6vh;
+        gap: 5vw;
     }
     .nav ul li > a {
-        font-size: 3vh;
+        font-size: 1.5vw;
     }
     /*Home section*/
     #main__home {
         display: grid;
         place-items: center;
         grid-template:
-        "txt img"1fr / 1fr 1fr;
+        1fr / 1fr 1fr;
     }
     .main__home__txt {
         align-items: flex-start;
@@ -404,5 +408,29 @@ body {
     }
     .main__home__img {
         width: 35vw;
+    }
+    /*About us section*/
+    #main__about {
+        display: grid;
+        place-items: center;
+        grid-template: "img txt" 1fr / 1fr 1fr;
+
+    }
+    .main__about__img {
+        grid-area: img;
+        width: 35vw;
+    }
+    .main__about__txt {
+        grid-area: txt;
+        justify-self: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        width: 65%;
+    }
+    .main__about__txt > p {
+        font-size: 1.5vw !important;
+    }
+    .main__about__txt h2 {
+        font-size: 3vw;
     }
 }
