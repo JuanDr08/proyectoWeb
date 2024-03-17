@@ -10,16 +10,23 @@
     <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
+    <label for="check"></label>
     <div class="body__left">
         <header id="header">
             <h1>CampusShop</h1>
         </header>
-        <ul class="body__pages">
-            <a href="#"><li>Todos los productos</li></a>
-            <a href="#"><li>Abrigos</li></a>
-            <a href="#"><li>Camisetas</li></a>
-            <a href="#"><li>Pantalones</li></a>
-        </ul>
+        <nav class="body__pages">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class='bx bx-menu'></i>
+            </label>
+            <ul>
+                <a href="index.html"><li class="active">Todos los productos</li></a>
+                <a href="#"><li>Abrigos</li></a>
+                <a href="#"><li>Camisetas</li></a>
+                <a href="#"><li>Pantalones</li></a>
+            </ul>
+        </nav>
         <i class='bx bx-cart carrito' alt="carrito compras"></i>
         <p>© 2023 Camper</p>
     </div>

@@ -20,11 +20,24 @@ ul {
     text-decoration: none;
     color: var(--color-secundario);
 }
-.body__left li {
+.body__left li,
+.body__left i {
     height: max-content;
     margin: 30px 0;
+    border-radius: 50px;
+    padding: 10px;
+    transition: all .2s, box-shadow 1s;
+    cursor: pointer;
 }
 
+.body__pages ul a li:hover,
+.body__left i:hover,
+.active {
+    background: var(--color-hover);
+    color: var(--color-secundario);
+    box-shadow: 0 0 50px var(--color-shadows);
+    scale: 1.1;
+}
 .body__left {
     width: 25%;
     color: var(--color-secundario);
@@ -35,12 +48,22 @@ ul {
 .body__left h1 {
     font-size: 3vw;
 }
-.body__pages a{
+.body__pages ul a{
     font-size: 1.5vw;
+}
+#check, .checkbtn {
+    display: none;
 }
 .carrito {
     font-size: 2vw;
 }
+
+
+
+
+
+
+
 
 .body__products {
     padding: 40px 20px 30px 30px;
@@ -48,8 +71,11 @@ ul {
     overflow-y: auto;
     background: var(--color-secundario);
     border-radius: 50px;
+    position: relative;
+    z-index: 1;
 }
 .body__products h1 {
     padding-bottom: 20px;
     color: var(--color-hover);
+    font-size: 3vw;
 }
