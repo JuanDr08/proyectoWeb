@@ -403,6 +403,7 @@ body {
     }
     .main__home__txt {
         align-items: flex-start;
+        text-align: start;
     }
     .main__home__txt h1 {
         font-size: 5vw;
@@ -503,7 +504,7 @@ body {
     }
     /*Word section*/
     #main__word {
-        height: calc(100vh - 80px);
+        height: calc(70vh - 80px);
         width: 100vw;
         padding: 0 4vw;
         display: flex;
@@ -521,5 +522,43 @@ body {
     #main__word section button {
         font-size: 1.7vw;
         padding: .5vw 2vw;
+    }
+    /*Footer section*/
+    #main__contact {
+        height: 30vh;
+        width: 70%;
+        padding: 0 !important;
+        margin: auto;
+        display: grid;
+        grid-template: 1fr / repeat(4, 1fr);
+        place-items: start center;
+    }
+
+
+    .footer {
+        align-self: start;
+    }
+    #main__contact > article {
+        margin: 0;
+    }
+    .menu h2,
+    .service h2,
+    .information h2,
+    .footer h2 {
+    font-weight: 400;
+    font-size: 1.5vw;
+    }
+
+
+    .menu ul li a,
+    .service ul li a,
+    .information ul li a,
+    .footer ul li a {
+        font-size: 1.2vw;
+    }
+}
+@media (height = 280px){
+    #main__word {
+        height: calc(100vh - 80px);
     }
 }
