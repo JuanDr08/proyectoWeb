@@ -513,6 +513,7 @@ body {
     }
     #main__word > section {
         width: 90%;
+        height: max-content;
         border: 10px double;
     }
     #main__word > section h1 {
