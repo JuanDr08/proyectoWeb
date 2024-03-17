@@ -11,6 +11,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 body {
     background: var(--color--body);
@@ -262,13 +263,14 @@ body {
     margin-bottom: 10px;
 }
 .service__card > article h3 {
-    font-weight: 600;
-    font-size: 2vh;
+    font-weight: 500;
+    font-size: 2.5vh;
+    padding-bottom: 1.5vh;
     color: var(--color--buttons);
 }
 .service__card p {
     font-weight: 500;
-    font-size: 1.8vh;
+    font-size: 2vh;
 }
 .main__services__img{
     display: flex;
@@ -305,8 +307,9 @@ body {
     border: 5px double;
 }
 #main__word > section h1 {
-    font-size: 3vh;
+    font-size: 2.8vh;
     font-weight: 500;
+    width: 90%;
     color: var(--color--titles);
 }
 #main__word section button {
@@ -394,6 +397,7 @@ body {
     #main__home {
         display: grid;
         place-items: center;
+        column-gap: 5%;
         grid-template:
         1fr / 1fr 1fr;
     }
@@ -401,7 +405,7 @@ body {
         align-items: flex-start;
     }
     .main__home__txt h1 {
-        font-size: 6vw;
+        font-size: 5vw;
     }
     .main__home__txt p {
         font-size: 3vw;
@@ -432,5 +436,90 @@ body {
     }
     .main__about__txt h2 {
         font-size: 3vw;
+    }
+
+    /*Menu Section*/
+    #main__menu {
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+        word-spacing: 10px;
+    }
+
+    .main__menu__img {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2vw;
+    }
+    .main__menu__title h1{
+        font-size: 3.5vw;
+        font-weight: 400;
+    }
+    .main__menu__title p {
+        font-size: 1.5vw;
+    }
+    .menu__card {
+        width: 20vw;
+    }
+    .menu__card article h3 {
+        font-size: 1.5vw;
+    }
+    .menu__card p {
+        font-size: 1.2vw;
+    }
+    .menu__card small {
+        font-size: 1.4vw;
+    }
+    /*Services Section*/
+    #main__services {
+        height: 100vh;
+        width: 100vw;
+        padding: 80px 0;
+        word-spacing: 10px;
+    }
+    .main__services__img {
+        flex-direction: row;
+        justify-content: center;
+        gap: 4vw;
+    }
+    .service__card {
+        width: 20vw;
+    }
+    .main__services__title  h1 {
+        font-size: 3.5vw;
+        font-weight: 400;
+    }
+    .main__services__title  p {
+        font-size: 1.5vw;
+    }
+    .service__card p {
+        font-size: 1.3vw;
+        font-weight: 300;
+    }
+    .service__card > article h3 {
+        font-size: 2vw;
+        font-weight: 500;
+        padding-bottom: 1vw;
+    }
+    /*Word section*/
+    #main__word {
+        height: calc(100vh - 80px);
+        width: 100vw;
+        padding: 0 4vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #main__word > section {
+        width: 90%;
+        border: 10px double;
+    }
+    #main__word > section h1 {
+        font-size: 4vw;
+        width: 60%;
+    }
+    #main__word section button {
+        font-size: 1.7vw;
+        padding: .5vw 2vw;
     }
 }
