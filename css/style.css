@@ -161,12 +161,12 @@ img {
     font-size: 1.3vw;
 }
 
-@media (width < 1024px) and (height > 629px) {
+@media (width < 1024px) and (height > 629px), (width = 1024px) and (height = 1366px) {
     body {
         padding: 0;
         display: grid;
         grid-template: 
-        "head" 80px
+        "head" 9vh
         "content" 1fr / 1fr;
         justify-items: center;
     }
@@ -183,7 +183,7 @@ img {
         height: 50vh;
         background: var(--color-cards);
         right: 100%;
-        top: 80px;
+        top: 100px;
         opacity: 0;
         transition: .5s;
     }

@@ -215,7 +215,7 @@ img {
     box-shadow: 0 0 15px var(--color-hover);
     text-shadow: 0 0 5px var(--color-secundario);
 }
-@media (width < 1024px) and (height > 629px) {
+@media (width < 1024px) and (height > 629px), (width = 1024px) and (height = 1366px)  {
     body {
         padding: 0;
         display: grid;
