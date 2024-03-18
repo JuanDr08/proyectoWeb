@@ -144,3 +144,8 @@ img {
     background: var(--color-cards);
     color: var(--color-secundario);
 }
+#contenedor > p {
+    width: 100%;
+    color: var(--color-hover);
+    font-size: 1.3vw;
+}
