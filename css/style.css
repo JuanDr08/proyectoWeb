@@ -12,6 +12,7 @@ body {
     background: var(--color-principal);
     padding: 5vh;
     display: flex;
+    font-family: 'Space Grotesk', sans-serif;
 }
 ul {
     list-style: none;
@@ -26,7 +27,7 @@ ul {
     margin: 30px 0;
     border-radius: 50px;
     padding: 10px;
-    transition: all .2s, box-shadow 1s;
+    transition: all .2s, box-shadow .5s;
     cursor: pointer;
 }
 
@@ -35,7 +36,7 @@ ul {
 .active {
     background: var(--color-hover);
     color: var(--color-secundario);
-    box-shadow: 0 0 50px var(--color-shadows);
+    box-shadow: 0 0 25px var(--color-hover);
     scale: 1.1;
 }
 .body__left {
@@ -47,6 +48,7 @@ ul {
 }
 .body__left h1 {
     font-size: 3vw;
+    font-family: 'Montserrat', sans-serif;
 }
 .body__pages ul a{
     font-size: 1.5vw;
@@ -57,7 +59,12 @@ ul {
 .carrito {
     font-size: 2vw;
 }
-
+img {
+    width: 320px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
 
 
 
@@ -66,16 +73,72 @@ ul {
 
 
 .body__products {
-    padding: 40px 20px 30px 30px;
+    padding: 30px 20px 30px 30px;
     width: 75%;
-    overflow-y: auto;
     background: var(--color-secundario);
     border-radius: 50px;
     position: relative;
     z-index: 1;
+    box-shadow: 0 0 20px 5px var(--color-hover);
+}
+#contenedor {
+    padding-top: 10px;
+    height: 90%;
+    width: 100%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-hover) var(--color-secundario);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 75px;
+    margin-bottom: 20px;
 }
 .body__products h1 {
-    padding-bottom: 20px;
+    height: 10%;
+    display: flex;
+    align-items: center;
     color: var(--color-hover);
     font-size: 3vw;
+}
+.contenedor > div {
+    box-shadow: 0 0 15px var(--color-hover);
+    background: var(--color-cards);
+    border-radius: 20px;
+    transition: all .5s;
+}
+.contenedor > div:hover {
+    background: var(--color-darkcards);
+    scale: 1.1;
+}
+.informacion {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+.informacion p:first-child {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 300; 
+}
+.informacion .precio {
+    font-size: 20px;
+    font-weight: 500;
+}
+.informacion button {
+    background: var(--color-cards);
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--color-hover);
+    border: none;
+    font-size: 17px;
+    font-weight: 300;
+    cursor: pointer;
+}
+.informacion button:hover {
+    background: var(--color-darkcards);
 }
