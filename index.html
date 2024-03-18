@@ -27,7 +27,10 @@
                 <a href="#"><li>Pantalones</li></a>
             </ul>
         </nav>
-        <i class='bx bx-cart carrito' alt="carrito compras"></i>
+        <div>
+            <i class='bx bx-cart carrito' alt="carrito compras"></i>
+            <div id="numero"></div>
+        </div>
         <p>© 2023 Camper</p>
     </div>
     <div class="body__products">
@@ -44,7 +47,7 @@
             <div>
                 <img src="storage/img/blackLongJacket.webp" alt="chaqueta 2">
                 <div class="informacion">
-                    <p>Long black jacket/p>
+                    <p>Long black jacket</p>
                     <p class="precio">$180000</p>
                     <button>Buy</button>
                 </div>
@@ -154,6 +157,16 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="contenedorCompra">
+        <div class="informacionCompra" id="informacionCompra">
+            <h2>Cesta</h2>
+            <p class="x" id="x">x</p>
+        </div>
+
+        <div class="productosCompra" id="productosCompra"></div>
+        <div class="total" id="total"></div>
+        <button>Finalizar Compra</button>
     </div>
 </body>
 </html>
