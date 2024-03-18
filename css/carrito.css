@@ -17,7 +17,7 @@ body {
 ul {
     list-style: none;
 }
-.body__left a {
+a {
     text-decoration: none;
     color: var(--color-secundario);
 }
@@ -61,10 +61,10 @@ ul {
     font-size: 2vw;
 }
 img {
-    width: 320px;
-    height: 340px;
+    width: 15vw;
+    height: 15vw;
     object-fit: cover;
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px 20px 20px 20px;
 }
 
 
@@ -84,8 +84,8 @@ img {
     box-shadow: 0 0 20px 5px var(--color-hover);
 }
 #contenedor {
-    padding-top: 10px;
-    height: 90%;
+    padding: 20px 0;
+    height: 80%;
     width: 100%;
     overflow-y: scroll;
     scrollbar-width: thin;
@@ -93,8 +93,8 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 75px;
-    margin-bottom: 20px;
+    gap: 2vw;
+    margin-bottom: 1vw;
 }
 .body__products h1 {
     height: 10%;
@@ -109,43 +109,103 @@ img {
     background: var(--color-cards);
     border-radius: 20px;
     transition: all .5s;
+    width: 80%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1vw;
+}
+.contenedor > div i {
+    font-size: 1.5vw;
+    color: var(--color-hover);
 }
 .contenedor > div:hover {
     background: var(--color-darkcards);
     scale: 1.1;
 }
-.informacion {
-    height: 150px;
+.informacion,
+.cantidad,
+.sub {
+    height: max-content;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
     gap: 15px;
 }
-.informacion p:first-child {
+.informacion p:first-child,
+.cantidad p:first-child,
+.sub p:first-child {
     font-family: 'Montserrat', sans-serif;
-    font-size: 25px;
-    font-weight: 300; 
+    font-size: 1.3vw;
+    font-weight: 600; 
+    color: var(--color-hover);
+    text-align: center;
+    
 }
-.informacion .precio {
-    font-size: 20px;
+.cantidad p:last-child,
+.informacion p:last-child,
+.sub p:last-child {
+    width: 100%;
+    text-align: center;
     font-weight: 500;
+    font-size: 1vw;
 }
-.informacion button {
+
+.pay__process {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.clean__cart {
+    width: 10vw;
+    height: max-content;
+    text-align: center;
+    padding: 1vw;
+    background-color: var(--color-hover);
+    border-radius: 50px;
+    font-size: 1vw;
+    transition: .3s;
+}
+.clean__cart:hover {
+    text-shadow: 0 0 5px var(--color-secundario);
+    scale: 1.1;
+    box-shadow: 0 0 15px var(--color-hover);
+}
+
+.buy__now {
+    display: flex;
+    justify-content: space-evenly;
+    width: 17vw;
+    height: max-content;
+    padding: 1vw;
     background: var(--color-cards);
-    width: 100px;
-    height: 35px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px var(--color-hover);
+    border-radius: 20px;
+    font-size: 1vw;
+    font-weight: 500;
+    color: var(--color-hover);
+    text-align: center;
+}
+.total {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.buy__now button {
+    border-radius: 50px;
     border: none;
-    font-size: 17px;
-    font-weight: 300;
-    cursor: pointer;
-}
-.informacion button:hover {
-    background: var(--color-darkcards);
-}
-.informacion button:active {
-    background: var(--color-cards);
+    background: var(--color-hover);
     color: var(--color-secundario);
+    padding: .8vw;
+    font-weight: 500;
+    font-size: 1vw;
+    cursor: pointer;
+    transition: .3s;
+}
+.buy__now button:hover {
+    scale: 1.1;
+    box-shadow: 0 0 15px var(--color-hover);
+    text-shadow: 0 0 5px var(--color-secundario);
 }

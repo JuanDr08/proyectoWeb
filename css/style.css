@@ -17,7 +17,7 @@ body {
 ul {
     list-style: none;
 }
-.body__left a {
+a {
     text-decoration: none;
     color: var(--color-secundario);
 }
@@ -61,19 +61,11 @@ ul {
     font-size: 2vw;
 }
 img {
-    width: 320px;
-    height: 340px;
+    width: 15vw;
+    height: 15vw;
     object-fit: cover;
     border-radius: 20px 20px 0 0;
 }
-
-
-
-
-
-
-
-
 .body__products {
     padding: 30px 20px 30px 30px;
     width: 75%;
@@ -93,8 +85,8 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 75px;
-    margin-bottom: 20px;
+    gap: 3vw;
+    margin-bottom: 1vw;
 }
 .body__products h1 {
     height: 10%;
@@ -109,37 +101,40 @@ img {
     background: var(--color-cards);
     border-radius: 20px;
     transition: all .5s;
+    height: max-content;
 }
 .contenedor > div:hover {
     background: var(--color-darkcards);
     scale: 1.1;
 }
 .informacion {
-    height: 150px;
+    height: 8vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 15px;
+    gap: 1vw;
 }
 .informacion p:first-child {
     font-family: 'Montserrat', sans-serif;
-    font-size: 25px;
+    font-size: 1.3vw;
     font-weight: 300; 
 }
 .informacion .precio {
-    font-size: 20px;
+    font-size: 1vw;
     font-weight: 500;
+    color: var(--color-hover);
 }
 .informacion button {
     background: var(--color-cards);
-    width: 100px;
-    height: 35px;
+    width: 6vw;
+    height: 2vw;
     border-radius: 10px;
     box-shadow: 0 0 10px var(--color-hover);
     border: none;
-    font-size: 17px;
-    font-weight: 300;
+    font-size: 1vw;
+    font-weight: 500;
+    color: var(--color-hover);
     cursor: pointer;
 }
 .informacion button:hover {
