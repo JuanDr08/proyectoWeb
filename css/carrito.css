@@ -23,17 +23,16 @@ a {
 }
 .body__left li,
 .body__left i {
-    height: max-content;
-    margin: 30px 0;
+    margin: 2vw 0;
     border-radius: 50px;
-    padding: 10px;
+    padding: .8vw;
     transition: all .2s, box-shadow .5s;
     cursor: pointer;
     width: 100%;
 }
 
 .body__pages ul a li:hover,
-.body__left i:hover,
+.body__left .carrito:hover,
 .active {
     background: var(--color-hover);
     color: var(--color-secundario);
@@ -65,6 +64,9 @@ img {
     height: 15vw;
     object-fit: cover;
     border-radius: 20px 20px 20px 20px;
+}
+.body__left p:last-child {
+    font-size: .8vw;
 }
 
 
@@ -124,6 +126,11 @@ img {
     background: var(--color-darkcards);
     scale: 1.1;
 }
+.contenedor > div > div {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
 .informacion,
 .cantidad,
 .sub {
@@ -156,7 +163,7 @@ img {
     height: 10%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 .clean__cart {
     width: 10vw;
@@ -178,8 +185,7 @@ img {
     display: flex;
     justify-content: space-evenly;
     width: 17vw;
-    height: max-content;
-    padding: 1vw;
+    padding: 1%;
     background: var(--color-cards);
     border-radius: 20px;
     font-size: 1vw;
@@ -208,4 +214,135 @@ img {
     scale: 1.1;
     box-shadow: 0 0 15px var(--color-hover);
     text-shadow: 0 0 5px var(--color-secundario);
+}
+@media (width < 1024px) and (height > 629px) {
+    body {
+        padding: 0;
+        display: grid;
+        grid-template: 
+        "head" 80px
+        "content" 1fr / 1fr;
+        justify-items: center;
+    }
+    .body__left {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1;
+    }
+    .nav__menu {
+        position: fixed;
+        width: 100%;
+        height: 50vh;
+        background: var(--color-cards);
+        right: 100%;
+        top: 80px;
+        opacity: 0;
+        transition: .5s;
+    }
+    #check:checked ~ ul {
+        right: 0;
+        opacity: 1;    
+    }
+    .nav__menu a li,
+    .body__left a i {
+        transition: none;
+        margin: 0;
+    }
+    .nav__menu a > li {
+        color: var(--color-secundario);
+        font-size: 3vh;
+        font-weight: 400;
+        text-align: center;
+    }
+    .nav__menu > a {
+        width: 90%;
+    }
+    .nav__menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .active {
+        scale: 1;
+    }
+    .body__left > p {
+        display: none;
+    }
+    .carrito {
+        font-size: 4vh;
+    }
+    .checkbtn {
+        display: block;
+        font-size: 3vh;
+    }
+    #header h1 {
+        font-size: 3vh;
+    }
+
+    /*Products part*/
+    .body__products {
+        z-index: 0;
+        width: 98%;
+        border-radius: 25px 25px 0 0;
+        padding: 2vh 1.5vh 2vh 1.5vh;
+    }
+    #contenedor {
+        height: 80%;
+        gap: 5vh;
+        margin-bottom: 0;
+    }
+    img {
+        width: 15vh;
+        height: 15vh;
+    }
+    .body__products h1 {
+        font-size: 3vh;
+        justify-content: center;
+    }
+    .contenedor > div {
+        box-shadow: 0 0 10px var(--color-hover);
+        width: 90%;
+    }
+    .contenedor > div i {
+        font-size: 2vh;
+    }
+    .contenedor > div > div {
+        flex-direction: column;
+        gap: 0;
+    }
+    .informacion,
+    .cantidad,
+    .sub {
+        gap: 0;
+    }
+    .informacion p:first-child,
+    .cantidad p:first-child,
+    .sub p:first-child {
+        font-size: 2vh;
+    }
+    .cantidad p:last-child,
+    .informacion p:last-child,
+    .sub p:last-child {
+        font-size: 1.5vh;
+    }
+    #contenedor > p {
+        font-size: 1.3vh;
+    }
+    .clean__cart {
+        width: 15vh;
+        padding: 1vh;
+        font-size: 1.5vh;
+    }
+    .buy__now {
+        width: 17vh;
+        padding: 1vh;
+        font-size: 1.3vh;
+    }
+    .buy__now button {
+        font-size: 1.3vh;
+        padding: .8vh;
+    }
 }
