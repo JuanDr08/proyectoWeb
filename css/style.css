@@ -184,7 +184,7 @@ img {
         padding: 0;
         display: grid;
         grid-template: 
-        "head" 9vh
+        "head" 80px
         "content" 1fr / 1fr;
         justify-items: center;
     }
@@ -236,7 +236,7 @@ img {
         display: none;
     }
     .carrito {
-        font-size: 4vh;
+        font-size: 5vh;
     }
     .checkbtn {
         display: block;
