@@ -127,6 +127,7 @@ img {
     }
     .contenedor > div {
         width: 90%;
+        animation-range: entry 10% cover 12%;
     }
     .contenedor > div i {
         font-size: 2vh;

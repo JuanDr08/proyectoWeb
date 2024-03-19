@@ -77,7 +77,6 @@ img {
 
 
 
-
 .body__products {
     padding: 30px 20px 30px 30px;
     width: 75%;
@@ -118,7 +117,7 @@ img {
     
     animation: reveal linear both;
     animation-timeline: view();
-    animation-range: entry 20% cover 30%;
+    animation-range: entry 20% cover 25%;
 }
 @keyframes reveal {
 	from {
@@ -150,7 +149,7 @@ img {
     font-weight: 300; 
 }
 .informacion .precio {
-    font-size: .8em;
+    font-size: 1.8vh;
     font-weight: 500;
     color: var(--color-hover);
 }
