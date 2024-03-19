@@ -31,10 +31,12 @@ a {
     cursor: pointer;
     width: 100%;
 }
-
+.body__left #check ~ label i{
+    font-size: 5vh;
+}
 .body__pages ul a li:hover,
 .body__left #check:checked ~ label i ,
-.body__left i:hover,
+.body__left > a i:hover,
 .active {
     background: var(--color-hover);
     color: var(--color-secundario);
@@ -113,6 +115,22 @@ img {
     transition: all .5s;
     padding-bottom: 1vh;
     height: max-content;
+    
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+}
+@keyframes reveal {
+	from {
+		opacity: 0;
+		clip-path: inset(45% 20% 45% 20%);
+        scale: .5;
+	}
+	to {
+		opacity: 1;
+		clip-path: inset(-10% -10% -10% -10%);
+        scale: 1;
+	}
 }
 .contenedor > div:hover {
     background: var(--color-darkcards);
@@ -183,7 +201,7 @@ img {
         height: 50vh;
         background: var(--color-cards);
         right: 100%;
-        top: 100px;
+        top: 80px;
         opacity: 0;
         transition: .5s;
     }
@@ -227,18 +245,21 @@ img {
     #header h1 {
         font-size: 3vh;
     }
+    .body__pages {
+        order: -1;
+    }
 
     /*Products part*/
     .body__products {
         z-index: 0;
-        width: 98%;
-        border-radius: 25px 25px 0 0;
+        width: 100%;
+        border-radius: 0;
         padding: 2vh 1.5vh 2vh 1.5vh;
         overflow-y: scroll;
     }
     #contenedor {
         height: 90%;
-        gap: 5vh;
+        gap: 3vh;
         margin-bottom: 0;
     }
     img {
