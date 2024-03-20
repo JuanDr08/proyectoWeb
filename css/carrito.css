@@ -72,8 +72,13 @@ img {
     padding: 1vw;
     background-color: var(--color-hover);
     border-radius: 50px;
-    font-size: 1vw;
     transition: .3s;
+}
+.clean__cart button {
+    font-size: 1.3vw;
+    background: none;
+    border: none;
+    color: var(--color-secundario);
 }
 .clean__cart:hover {
     text-shadow: 0 0 5px var(--color-secundario);
@@ -154,6 +159,8 @@ img {
     .clean__cart {
         width: 15vh;
         padding: 1vh;
+    }
+    .clean__cart button {
         font-size: 1.5vh;
     }
     .buy__now {

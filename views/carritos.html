@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="../storage/img/logo.webp" type="image/x-icon">
     <link rel="stylesheet" href="../css/carrito.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="js/main.js" defer></script>
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
     <div class="body__left">
@@ -31,7 +31,7 @@
     </div>
     <div class="body__products">
         <h1>Carrito</h1>
-        <div class="contenedor" id="contenedor">
+        <div class="contenedor contenedor_carritos" id="contenedor">
             <div>
                 <img src="../storage/img/blackLongJacket.webp" alt="chaqueta 2">
                 <div>
@@ -125,14 +125,14 @@
         </div>
         <div class="pay__process">
             <section class="clean__cart">
-                <a href="carritoVacio.html"><p>Vacear carrito</p></a>
+                <button onclick="empty_Cart()"><p>Vacear carrito</p></button>
             </section>
             <section class="buy__now">
                 <div class="total">
                     <p>Total</p>
                     <p>$ 580000</p>
                 </div>
-                <a href="carritoVacio.html"><button onclick="alert('Gracias por tu compra')">Comprar Ahora</button></a>
+                <button onclick="alert('Gracias por tu compra, esta en camino, llegara en unos dias')">Comprar Ahora</button>
             </section>
         </div>
     </div>
