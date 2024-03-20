@@ -1,4 +1,5 @@
 @import url(variables.css);
+@import url(carrito.css);
 
 * {
     margin: 0;
@@ -17,10 +18,6 @@ body {
 ul {
     list-style: none;
 }
-a {
-    text-decoration: none;
-    color: var(--color-secundario);
-}
 .nav__menu button li,
 .body__left i {
     height: max-content;
@@ -36,7 +33,7 @@ a {
 }
 .body__pages ul button li:hover,
 .body__left #check:checked ~ label i ,
-.body__left > a i:hover,
+.body__left > button i:hover,
 .active {
     background: var(--color-hover);
     color: var(--color-secundario);
@@ -54,18 +51,17 @@ a {
     font-size: 3vw;
     font-family: 'Montserrat', sans-serif;
 }
-.nav__menu button{
+.nav__menu button,
+.body__left > button {
     font-size: 1.5vw;
     background: none;
     border: none;
     color: var(--color-secundario);
+    text-align: left;
 }
 .nav__menu {
     display: flex;
     flex-direction: column;
-}
-.nav__menu button li {
-    text-align: left;
 }
 #check, .checkbtn {
     display: none;
@@ -97,7 +93,7 @@ img {
     box-shadow: 0 0 20px 5px var(--color-hover);
 }
 #contenedor {
-    padding-top: 10px;
+    padding: 10px 0;
     height: 90%;
     width: 100%;
     overflow-y: scroll;
@@ -121,9 +117,8 @@ img {
     box-shadow: 0 0 15px var(--color-hover);
     background: var(--color-cards);
     border-radius: 20px;
-    transition: all .5s;
-    padding-bottom: 1vh;
     height: max-content;
+    padding-bottom: 1vh;
     
     animation: reveal linear both;
     animation-timeline: view();
@@ -141,10 +136,10 @@ img {
         scale: 1;
 	}
 }
-.contenedor > div:hover {
+/* .contenedor > div:hover {
     background: var(--color-darkcards);
-    scale: 1.1;
-}
+    scale: 1.1 !important;
+} */
 .informacion {
     height: 8vw;
     display: flex;

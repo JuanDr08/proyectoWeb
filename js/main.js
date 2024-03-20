@@ -131,6 +131,7 @@ function index() {
     document.getElementById('hoodies').classList.remove('active')
     document.getElementById('tshirt').classList.remove('active')
     document.getElementById('pants').classList.remove('active')
+    document.getElementById('carrito').classList.remove('active')
 }
 
 function abrigos () {
@@ -181,6 +182,7 @@ function abrigos () {
     document.getElementById('all').classList.remove('active')
     document.getElementById('tshirt').classList.remove('active')
     document.getElementById('pants').classList.remove('active')
+    document.getElementById('carrito').classList.remove('active')
 }
 function camisetas() {
     document.querySelector('.body_products_index').innerHTML = `<h1>Camisetas</h1>
@@ -230,6 +232,7 @@ function camisetas() {
     document.getElementById('all').classList.remove('active')
     document.getElementById('tshirt').classList.add('active')
     document.getElementById('pants').classList.remove('active')
+    document.getElementById('carrito').classList.remove('active')
 }
 function pantalones() {
     document.querySelector('.body_products_index').innerHTML = `<h1>Pantalones</h1>
@@ -279,4 +282,118 @@ function pantalones() {
     document.getElementById('all').classList.remove('active')
     document.getElementById('tshirt').classList.remove('active')
     document.getElementById('pants').classList.add('active')
+    document.getElementById('carrito').classList.remove('active')
+}
+
+function cart() {
+    document.querySelector('.body_products_index').innerHTML = `<h1>Carrito</h1>
+    <div class="contenedor contenedor_carritos" id="contenedor_cart">
+        <div>
+            <img src="../storage/img/blackLongJacket.webp" alt="chaqueta 2">
+            <div>
+                <div class="informacion_cart">
+                    <p>Long black jacket</p>
+                    <p class="precio">$180000</p>
+                </div>
+                <div class="cantidad">
+                    <p>Cantidad</p>
+                    <p>1</p>
+                </div>
+                <div class="sub">
+                    <p>Sub-Total</p>
+                    <p>$ 180000</p>
+                </div>
+            </div>
+            <a href="#"><i class='bx bx-trash'></i></a>
+        </div>
+        <div>
+            <img src="../storage/img/nezukoTshirt.webp" alt="camisetas 2">
+            <div>
+                <div class="informacion_cart">
+                    <p>Nezuko t-shirt</p>
+                    <p class="precio">$60000</p>
+                </div>
+                <div class="cantidad">
+                    <p>Cantidad</p>
+                    <p>1</p>
+                </div>
+                <div class="sub">
+                    <p>Sub-Total</p>
+                    <p>$ 60000</p>
+                </div>
+            </div>
+            <a href="#"><i class='bx bx-trash'></i></a>
+        </div>
+        <div>
+            <img src="../storage/img/pantalonMilitar.webp" alt="pantalon 1">
+            <div>
+                <div class="informacion_cart">
+                    <p>Military pant men</p>
+                    <p class="precio">$100000</p>
+                </div>
+                <div class="cantidad">
+                    <p>Cantidad</p>
+                    <p>1</p>
+                </div>
+                <div class="sub">
+                    <p>Sub-Total</p>
+                    <p>$ 100000</p>
+                </div>
+            </div>
+            <a href="#"><i class='bx bx-trash'></i></a>
+        </div>
+        <div>
+            <img src="../storage/img/whiteLongJacket.webp" alt="pantalon 1">
+            <div>
+                <div class="informacion_cart">
+                    <p>Long white jacket</p>
+                    <p class="precio">$180000</p>
+                </div>
+                <div class="cantidad">
+                    <p>Cantidad</p>
+                    <p>1</p>
+                </div>
+                <div class="sub">
+                    <p>Sub-Total</p>
+                    <p>$ 180000</p>
+                </div>
+            </div>
+            <a href="#"><i class='bx bx-trash'></i></a>
+        </div>
+        <div>
+            <img src="../storage/img/poloWhite.webp" alt="pantalon 1">
+            <div>
+                <div class="informacion_cart">
+                    <p>White polo</p>
+                    <p class="precio">$60000</p>
+                </div>
+                <div class="cantidad">
+                    <p>Cantidad</p>
+                    <p>1</p>
+                </div>
+                <div class="sub">
+                    <p>Sub-Total</p>
+                    <p>$ 60000</p>
+                </div>
+            </div>
+            <a href="#"><i class='bx bx-trash'></i></a>
+        </div>
+    </div>
+    <div class="pay__process">
+        <section class="clean__cart">
+            <button onclick="empty_Cart()"><p>Vacear carrito</p></button>
+        </section>
+        <section class="buy__now">
+            <div class="total">
+                <p>Total</p>
+                <p>$ 580000</p>
+            </div>
+            <button onclick="alert('Gracias por tu compra, esta en camino, llegara en unos dias')">Comprar Ahora</button>
+        </section>
+    </div>`
+    document.getElementById('hoodies').classList.remove('active')
+    document.getElementById('all').classList.remove('active')
+    document.getElementById('tshirt').classList.remove('active')
+    document.getElementById('pants').classList.remove('active')
+    document.getElementById('carrito').classList.add('active')
 }

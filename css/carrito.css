@@ -1,36 +1,44 @@
 @import url(variables.css);
 @import url(style.css);
 
-img {
+.contenedor_carritos > div > img {
     border-radius: 20px 20px 20px 20px;
 }
 
 
 
-#contenedor {
+#contenedor_cart {
     padding: 20px 0;
     height: 80%;
+    width: 100%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-hover) var(--color-secundario);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 2vw;
+    margin-bottom: 1vw;
 }
-.contenedor > div {
+.contenedor_carritos > div {
     width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-right: 1vw;
-    padding-bottom: 0;
+    padding-bottom: 0 !important;
 }
 
-.contenedor > div i {
+.contenedor_carritos > div i {
     font-size: 1.5vw;
     color: var(--color-hover);
 }
-.contenedor > div > div {
+.contenedor_carritos > div > div {
     display: flex;
     align-items: center;
     gap: 2vw;
 }
-.informacion,
+.informacion_cart,
 .cantidad,
 .sub {
     height: max-content;
@@ -39,7 +47,7 @@ img {
     flex-direction: column;
     gap: 15px;
 }
-.informacion p:first-child,
+.informacion_cart p:first-child,
 .cantidad p:first-child,
 .sub p:first-child {
     font-family: 'Montserrat', sans-serif;
@@ -50,7 +58,7 @@ img {
     
 }
 .cantidad p:last-child,
-.informacion p:last-child,
+.informacion_cart p:last-child,
 .sub p:last-child {
     width: 100%;
     text-align: center;
@@ -80,7 +88,7 @@ img {
     border: none;
     color: var(--color-secundario);
 }
-.clean__cart:hover {
+.clean__cart:active {
     text-shadow: 0 0 5px var(--color-secundario);
     scale: 1.1;
     box-shadow: 0 0 15px var(--color-hover);
@@ -115,44 +123,45 @@ img {
     cursor: pointer;
     transition: .3s;
 }
-.buy__now button:hover {
+.buy__now button:active {
     scale: 1.1;
     box-shadow: 0 0 15px var(--color-hover);
     text-shadow: 0 0 5px var(--color-secundario);
 }
 @media (width < 1024px) and (height > 629px), (width = 1024px) and (height = 1366px)  {
 
-    #contenedor {
+    #contenedor_cart {
         height: 80%;
         gap: 5vh;
+        margin-bottom: 0;
     }
-    img {
+    .contenedor_carritos > div img {
         width: 15vh;
         height: 15vh;
     }
-    .contenedor > div {
+    .contenedor_carritos > div {
         width: 90%;
-        animation-range: entry 10% cover 12%;
+        animation-range: entry 10% cover 12% !important;
     }
-    .contenedor > div i {
+    .contenedor_carritos > div i {
         font-size: 2vh;
     }
-    .contenedor > div > div {
+    .contenedor_carritos > div > div {
         flex-direction: column;
         gap: 0;
     }
-    .informacion,
+    .informacion_cart,
     .cantidad,
     .sub {
         gap: 0;
     }
-    .informacion p:first-child,
+    .informacion_cart p:first-child,
     .cantidad p:first-child,
     .sub p:first-child {
         font-size: 2vh;
     }
     .cantidad p:last-child,
-    .informacion p:last-child,
+    .informacion_cart p:last-child,
     .sub p:last-child {
         font-size: 1.5vh;
     }
