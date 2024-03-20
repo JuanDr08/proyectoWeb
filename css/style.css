@@ -21,7 +21,7 @@ a {
     text-decoration: none;
     color: var(--color-secundario);
 }
-.body__left li,
+.nav__menu button li,
 .body__left i {
     height: max-content;
     margin: 2vw 0;
@@ -34,7 +34,7 @@ a {
 .body__left #check ~ label i{
     font-size: 5vh;
 }
-.body__pages ul a li:hover,
+.body__pages ul button li:hover,
 .body__left #check:checked ~ label i ,
 .body__left > a i:hover,
 .active {
@@ -54,8 +54,18 @@ a {
     font-size: 3vw;
     font-family: 'Montserrat', sans-serif;
 }
-.body__pages ul a{
+.nav__menu button{
     font-size: 1.5vw;
+    background: none;
+    border: none;
+    color: var(--color-secundario);
+}
+.nav__menu {
+    display: flex;
+    flex-direction: column;
+}
+.nav__menu button li {
+    text-align: left;
 }
 #check, .checkbtn {
     display: none;
@@ -208,18 +218,18 @@ img {
         right: 0;
         opacity: 1;    
     }
-    .nav__menu a li,
+    .nav__menu button li,
     .body__left a i {
         transition: none;
         margin: 0;
     }
-    .nav__menu a > li {
+    .nav__menu button > li {
         color: var(--color-secundario);
         font-size: 3vh;
         font-weight: 400;
         text-align: center;
     }
-    .nav__menu > a {
+    .nav__menu > button {
         width: 90%;
     }
     .nav__menu {
