@@ -136,10 +136,11 @@ img {
         scale: 1;
 	}
 }
-/* .contenedor > div:hover {
+.contenedor > div:hover {
     background: var(--color-darkcards);
     scale: 1.1 !important;
-} */
+
+} 
 .informacion {
     height: 8vw;
     display: flex;
@@ -151,7 +152,8 @@ img {
 .informacion p:first-child {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3vw;
-    font-weight: 300; 
+    font-weight: 500; 
+    color: var(--color-hover);
 }
 .informacion .precio {
     font-size: 1.8vh;
