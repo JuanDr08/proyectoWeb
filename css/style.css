@@ -56,6 +56,7 @@ ul {
     font-size: 1.5vw;
     background: none;
     border: none;
+    position: relative;
     color: var(--color-secundario);
     text-align: left;
 }
@@ -68,6 +69,7 @@ ul {
 }
 .carrito {
     font-size: 2vw;
+    position: relative;
 }
 img {
     width: 15vw;
@@ -78,6 +80,13 @@ img {
 .body__left p:last-child {
     font-size: .8vw;
 }
+#counter {
+    position: absolute;
+    top: 25%;
+    right: 75%;
+    font-size: 2vw;
+}
+
 
 
 
@@ -254,7 +263,11 @@ img {
     .body__pages {
         order: -1;
     }
-
+    #counter {
+        font-size: 2.3vh;
+        top: 75%;
+        right: 0%;
+    }
     /*Products part*/
     .body__products {
         z-index: 0;

@@ -1,15 +1,20 @@
 let carrito = ``;
 let precio = 0;
-console.log(precio)
-console.log(carrito)
+let items = 0;
 function empty_Cart () {
     document.querySelector('.contenedor_carritos').innerHTML = '<p>Tu carrito esta vacio :(</p>';
     carrito = ``;
     precio = 0;
+    items = 0;
     document.getElementById('total_pagar').innerHTML = '$ ' + precio.toString() ;
+    document.getElementById('counter').innerHTML = items;
 }
-
-
+function comprar () {
+    alert('Gracias por tu compra, esta en camino, llegara en unos dias')
+    document.querySelector('.contenedor_carritos').innerHTML = '<p>Tu carrito esta vacio :(</p>';
+    items = 0;
+    document.getElementById('counter').innerHTML = items;
+}
 function index() {
     document.querySelector('.body_products_index').innerHTML = `<h1>Todos los productos</h1>
     <div class="contenedor" id="contenedor">
@@ -298,14 +303,14 @@ function cart() {
     </div>
     <div class="pay__process">
         <section class="clean__cart">
-            <button onclick="empty_Cart()"><p>Vacear carrito</p></button>
+            <button onclick="empty_Cart()"><p>Vaciar carrito</p></button>
         </section>
         <section class="buy__now">
             <div class="total">
                 <p>Total</p>
                 <p id="total_pagar">$ 0</p>
             </div>
-            <button onclick="alert('Gracias por tu compra, esta en camino, llegara en unos dias')">Comprar Ahora</button>
+            <button onclick="comprar()">Comprar Ahora</button>
         </section>
     </div>`
     document.getElementById('total_pagar').innerHTML = '$ ' + precio;
@@ -626,78 +631,94 @@ function botones(buttonNum = Number) {
         case 1:
             carrito += prdt1
             precio += 180000;
-            console.log(carrito + 'adios')
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 2:
             carrito += prdt2
             precio += 180000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 3:
             carrito += prdt3
             precio += 180000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 4:
             carrito += prdt4
             precio += 180000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 5:
             carrito += prdt5
             precio += 160000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 6:
             carrito += prdt6
             precio += 100000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 7:
             carrito += prdt7
             precio += 100000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 8:
             carrito += prdt8
             precio += 90000
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 9:
             carrito += prdt9
             precio += 100000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 10:
             carrito += prdt10
             precio += 100000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 11:
             carrito += prdt11
             precio += 60000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 12:
             carrito += prdt12
             precio += 60000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 13:
             carrito += prdt13
             precio += 60000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 14:
             carrito += prdt14
             precio += 60000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         case 15:
             carrito += prdt15
             precio += 60000;
-            console.log(carrito)
+            items += 1;
+            document.getElementById('counter').innerHTML = items;
             break
         
     }
 }
+console.log(items)
