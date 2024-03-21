@@ -143,6 +143,7 @@ function index() {
         elemento.classList.remove('active')
     })
     document.getElementById('all').classList.add('active')
+    document.getElementById('counter').innerHTML = items;
 }
 function abrigos () {
     document.querySelector('.body_products_index').innerHTML = `<h1>Abrigos</h1>
@@ -192,6 +193,7 @@ function abrigos () {
         elemento.classList.remove('active')
     })
     document.getElementById('hoodies').classList.add('active')
+    document.getElementById('counter').innerHTML = items;
 }
 function camisetas() {
     document.querySelector('.body_products_index').innerHTML = `<h1>Camisetas</h1>
@@ -241,6 +243,7 @@ function camisetas() {
         elemento.classList.remove('active')
     })
     document.getElementById('tshirt').classList.add('active')
+    document.getElementById('counter').innerHTML = items;
 }
 function pantalones() {
     document.querySelector('.body_products_index').innerHTML = `<h1>Pantalones</h1>
@@ -290,6 +293,7 @@ function pantalones() {
         elemento.classList.remove('active')
     })
     document.getElementById('pants').classList.add('active')
+    document.getElementById('counter').innerHTML = items;
 }
 
 function cart() {
@@ -312,12 +316,28 @@ function cart() {
         elemento.classList.remove('active')
     })
     document.getElementById('carrito').classList.add('active')
+    document.getElementById('counter').innerHTML = items;
     document.getElementById('total_pagar').innerHTML = '$ ' + precio;
     document.querySelector('.contenedor_carritos').innerHTML = carrito;
 
 }
-
-
+function borrar() {
+    let botones = document.querySelectorAll('.eliminar');
+    botones.forEach(function(adios) {
+        adios.addEventListener('click', function() {
+            let tarjetaAEliminar = this.parentNode;
+            
+            tarjetaAEliminar.remove()
+        })
+    })
+    botones.forEach(function(restar) {
+        newItems = items
+        restar.addEventListener('click', function() {
+            newItems -= 1;
+            document.getElementById('counter').innerHTML = newItems;
+        })
+    })
+}
 
 
 const prdt1 = `
@@ -337,7 +357,7 @@ const prdt1 = `
             <p>$ 180000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `;
 const prdt2 = `
@@ -357,7 +377,7 @@ const prdt2 = `
             <p>$ 180000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 const prdt3 = `
@@ -377,7 +397,7 @@ const prdt3 = `
             <p>$ 180000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `  
 const prdt4 = `
@@ -397,7 +417,7 @@ const prdt4 = `
             <p>$ 180000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 const prdt5 = `
@@ -417,7 +437,7 @@ const prdt5 = `
             <p>$ 160000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 const prdt6 = `
@@ -437,7 +457,7 @@ const prdt6 = `
             <p>$ 100000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 const prdt7 = `
@@ -457,7 +477,7 @@ const prdt7 = `
             <p>$ 100000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 const prdt8 = `
@@ -477,7 +497,7 @@ const prdt8 = `
             <p>$ 90000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 const prdt9 = `
@@ -497,7 +517,7 @@ const prdt9 = `
             <p>$ 100000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 const prdt10 = `
@@ -517,7 +537,7 @@ const prdt10 = `
             <p>$ 100000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 const prdt11 = `
@@ -537,7 +557,7 @@ const prdt11 = `
             <p>$ 60000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 const prdt12 = `
@@ -557,7 +577,7 @@ const prdt12 = `
             <p>$ 60000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 const prdt13 = `
@@ -577,7 +597,7 @@ const prdt13 = `
             <p>$ 60000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 const prdt14 = `
@@ -597,7 +617,7 @@ const prdt14 = `
             <p>$ 60000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 const prdt15 = `
@@ -617,7 +637,7 @@ const prdt15 = `
             <p>$ 60000</p>
         </div>
     </div>
-    <button><i class='bx bx-trash'></i></button>
+    <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
 </div>
 `
 function botones(buttonNum = Number) {
