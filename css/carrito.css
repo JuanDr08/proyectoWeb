@@ -159,7 +159,7 @@
         width: 90%;
         animation-range: entry 10% cover 12% !important;
     }
-    .contenedor_carritos > div i {
+    .contenedor_carritos > div button i {
         font-size: 2vh;
     }
     .contenedor_carritos > div > div {

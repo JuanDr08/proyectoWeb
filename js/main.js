@@ -139,13 +139,11 @@ function index() {
             </div>
         </div>
     </div>`;
+    document.querySelectorAll('#hoodies, #tshirt, #pants, #carrito').forEach(elemento => {
+        elemento.classList.remove('active')
+    })
     document.getElementById('all').classList.add('active')
-    document.getElementById('hoodies').classList.remove('active')
-    document.getElementById('tshirt').classList.remove('active')
-    document.getElementById('pants').classList.remove('active')
-    document.getElementById('carrito').classList.remove('active')
 }
-
 function abrigos () {
     document.querySelector('.body_products_index').innerHTML = `<h1>Abrigos</h1>
     <div class="contenedor" id="contenedor">
@@ -190,11 +188,10 @@ function abrigos () {
         </div>
     </div>
     </div>`;
+    document.querySelectorAll('#all, #tshirt, #pants, #carrito').forEach(elemento => {
+        elemento.classList.remove('active')
+    })
     document.getElementById('hoodies').classList.add('active')
-    document.getElementById('all').classList.remove('active')
-    document.getElementById('tshirt').classList.remove('active')
-    document.getElementById('pants').classList.remove('active')
-    document.getElementById('carrito').classList.remove('active')
 }
 function camisetas() {
     document.querySelector('.body_products_index').innerHTML = `<h1>Camisetas</h1>
@@ -240,11 +237,10 @@ function camisetas() {
         </div>
     </div>
     </div>`;
-    document.getElementById('hoodies').classList.remove('active')
-    document.getElementById('all').classList.remove('active')
+    document.querySelectorAll('#all, #hoodies, #pants, #carrito').forEach(elemento => {
+        elemento.classList.remove('active')
+    })
     document.getElementById('tshirt').classList.add('active')
-    document.getElementById('pants').classList.remove('active')
-    document.getElementById('carrito').classList.remove('active')
 }
 function pantalones() {
     document.querySelector('.body_products_index').innerHTML = `<h1>Pantalones</h1>
@@ -290,11 +286,10 @@ function pantalones() {
         </div>
     </div>
     </div>`
-    document.getElementById('hoodies').classList.remove('active')
-    document.getElementById('all').classList.remove('active')
-    document.getElementById('tshirt').classList.remove('active')
+    document.querySelectorAll('#all, #hoodies, #tshirt, #carrito').forEach(elemento => {
+        elemento.classList.remove('active')
+    })
     document.getElementById('pants').classList.add('active')
-    document.getElementById('carrito').classList.remove('active')
 }
 
 function cart() {
@@ -313,13 +308,12 @@ function cart() {
             <button onclick="comprar()">Comprar Ahora</button>
         </section>
     </div>`
+    document.querySelectorAll('#all, #hoodies, #tshirt, #pants').forEach(elemento => {
+        elemento.classList.remove('active')
+    })
+    document.getElementById('carrito').classList.add('active')
     document.getElementById('total_pagar').innerHTML = '$ ' + precio;
     document.querySelector('.contenedor_carritos').innerHTML = carrito;
-    document.getElementById('hoodies').classList.remove('active')
-    document.getElementById('all').classList.remove('active')
-    document.getElementById('tshirt').classList.remove('active')
-    document.getElementById('pants').classList.remove('active')
-    document.getElementById('carrito').classList.add('active')
 
 }
 
