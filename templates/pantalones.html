@@ -1,78 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampusShop</title>
-    <link rel="shortcut icon" href="../storage/img/logo.webp" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="js/main.js" defer></script>
-</head>
-<body>
-    <div class="body__left">
-        <header id="header">
-            <h1>CampusShop</h1>
-        </header>
-        <nav class="body__pages">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class='bx bx-menu'></i>
-            </label>
-            <ul class="nav__menu">
-                <a href="../index.html"><li>Todos los productos</li></a>
-                <a href="abrigos.html"><li>Abrigos</li></a>
-                <a href="camisetas.html"><li>Camisetas</li></a>
-                <a href="pantalones.html"><li class="active">Pantalones</li></a>
-            </ul>
-        </nav>
-        <a href="carritos.html"><i class='bx bx-cart carrito' alt="carrito compras"></i></a>
-        <p>© 2023 Camper</p>
-    </div>
-    <div class="body__products">
-        <h1>Pantalones</h1>
-        <div class="contenedor" id="contenedor">
-            <div>
-                <img src="../storage/img/pantalonMilitar.webp" alt="pantalon 1">
-                <div class="informacion">
-                    <p>Military pant men</p>
-                    <p class="precio">$100000</p>
-                    <button>Buy</button>
-                </div>
+{%extends 'index.html' %}
+
+{%block nav%}
+    <a href="{{url_for('index')}}"><li>Todos los productos</li></a>
+    <a href="{{url_for('abrigos')}}"><li>Abrigos</li></a>
+    <a href="{{url_for('tshirts')}}"><li>Camisetas</li></a>
+    <a href="{{url_for('pants')}}"><li class="active">Pantalones</li></a>
+{%endblock%}
+{%block content%}
+    <h1>Pantalones</h1>
+    <div class="contenedor" id="contenedor">
+        <div>
+            <img src="../storage/img/pantalonMilitar.webp" alt="pantalon 1">
+            <div class="informacion">
+                <p>Military pant men</p>
+                <p class="precio">$100000</p>
+                <button>Buy</button>
             </div>
-            <div>
-                <img src="../storage/img/pantalonBeige.webp" alt="pantalon 2">
-                <div class="informacion">
-                    <p>Formal beige pan</p>
-                    <p class="precio">$100000</p>
-                    <button>Buy</button>
-                </div>
+        </div>
+        <div>
+            <img src="../storage/img/pantalonBeige.webp" alt="pantalon 2">
+            <div class="informacion">
+                <p>Formal beige pan</p>
+                <p class="precio">$100000</p>
+                <button>Buy</button>
             </div>
-            <div>
-                <img src="../storage/img/pantalon.webp" alt="pantalon 3">
-                <div class="informacion">
-                    <p>Gray jogger</p>
-                    <p class="precio">$90000</p>
-                    <button>Buy</button>
-                </div>
+        </div>
+        <div>
+            <img src="../storage/img/pantalon.webp" alt="pantalon 3">
+            <div class="informacion">
+                <p>Gray jogger</p>
+                <p class="precio">$90000</p>
+                <button>Buy</button>
             </div>
-            <div>
-                <img src="../storage/img/militarMujer.webp" alt="pantalon 4">
-                <div class="informacion">
-                    <p>Military pant women</p>
-                    <p class="precio">$100000</p>
-                    <button>Buy</button>
-                </div>
+        </div>
+        <div>
+            <img src="../storage/img/militarMujer.webp" alt="pantalon 4">
+            <div class="informacion">
+                <p>Military pant women</p>
+                <p class="precio">$100000</p>
+                <button>Buy</button>
             </div>
-            <div>
-                <img src="../storage/img/formalPantMen.webp" alt="pantalon 5">
-                <div class="informacion">
-                    <p>Formal pant men</p>
-                    <p class="precio">$100000</p>
-                    <button>Buy</button>
-                </div>
+        </div>
+        <div>
+            <img src="../storage/img/formalPantMen.webp" alt="pantalon 5">
+            <div class="informacion">
+                <p>Formal pant men</p>
+                <p class="precio">$100000</p>
+                <button>Buy</button>
             </div>
         </div>
     </div>
-</body>
-</html>
+{%endblock%}
