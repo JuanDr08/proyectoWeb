@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampusShop</title>
     <link rel="shortcut icon" href="storage/img/logo.webp" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="js/main.js" defer></script>
 </head>
@@ -21,7 +21,7 @@
             </label>
             <ul class="nav__menu">
                 <a href="index.html"><li class="active">Todos los productos</li></a>
-                <a href="views/abrigos.html"><li>Abrigos</li></a>
+                <a href="abrigos"><li>Abrigos</li></a>
                 <a href="views/camisetas.html"><li>Camisetas</li></a>
                 <a href="views/pantalones.html"><li>Pantalones</li></a>
             </ul>
