@@ -9,45 +9,17 @@
 {%block content%}
     <h1>Camisetas</h1>
     <div class="contenedor" id="contenedor">
-        <div>
-            <img src="../storage/img/poloWhite.webp" alt="camisetas 1">
-            <div class="informacion">
-                <p>White polo</p>
-                <p class="precio">$60000</p>
-                <button>Buy</button>
-            </div>
-        </div>
-        <div>
-            <img src="../storage/img/nezukoTshirt.webp" alt="camisetas 2">
-            <div class="informacion">
-                <p>Nezuko t-shirt</p>
-                <p class="precio">$60000</p>
-                <button>Buy</button>
-            </div>
-        </div>
-        <div>
-            <img src="../storage/img/iluminatiTshirt.webp" alt="camisetas 3">
-            <div class="informacion">
-                <p>Rokstar t-shirt</p>
-                <p class="precio">$60000</p>
-                <button>Buy</button>
-            </div>
-        </div>
-        <div>
-            <img src="../storage/img/deportivaWhite.webp" alt="camisetas 4">
-            <div class="informacion">
-                <p>Deportive t-shirt white</p>
-                <p class="precio">$60000</p>
-                <button>Buy</button>
-            </div>
-        </div>
-        <div>
-            <img src="../storage/img/deportivaTshirt.webp" alt="camisetas 5">
-            <div class="informacion">
-                <p>Deportive t-shirt blue</p>
-                <p class="precio">$60000</p>
-                <button>Buy</button>
-            </div>
-        </div>
+        {%for item in peticion%}
+            {%if 10 < item['id'] | int() and item['id'] | int() < 16 %}
+                <div>
+                    <img src="{{item['img']}}">
+                    <div class="informacion">
+                        <p>{{item['description']}}</p>
+                        <p class="precio">$ {{item['price']}}</p>
+                        <button>Buy</button>
+                    </div>
+                </div>
+            {%endif%}
+        {%endfor%}
     </div>
 {%endblock%}

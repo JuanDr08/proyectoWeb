@@ -9,45 +9,17 @@
 {%block content%}
     <h1>Pantalones</h1>
     <div class="contenedor" id="contenedor">
-        <div>
-            <img src="../storage/img/pantalonMilitar.webp" alt="pantalon 1">
-            <div class="informacion">
-                <p>Military pant men</p>
-                <p class="precio">$100000</p>
-                <button>Buy</button>
-            </div>
-        </div>
-        <div>
-            <img src="../storage/img/pantalonBeige.webp" alt="pantalon 2">
-            <div class="informacion">
-                <p>Formal beige pan</p>
-                <p class="precio">$100000</p>
-                <button>Buy</button>
-            </div>
-        </div>
-        <div>
-            <img src="../storage/img/pantalon.webp" alt="pantalon 3">
-            <div class="informacion">
-                <p>Gray jogger</p>
-                <p class="precio">$90000</p>
-                <button>Buy</button>
-            </div>
-        </div>
-        <div>
-            <img src="../storage/img/militarMujer.webp" alt="pantalon 4">
-            <div class="informacion">
-                <p>Military pant women</p>
-                <p class="precio">$100000</p>
-                <button>Buy</button>
-            </div>
-        </div>
-        <div>
-            <img src="../storage/img/formalPantMen.webp" alt="pantalon 5">
-            <div class="informacion">
-                <p>Formal pant men</p>
-                <p class="precio">$100000</p>
-                <button>Buy</button>
-            </div>
-        </div>
+        {%for item in peticion%}
+            {%if 5 < item['id'] | int() and item['id'] | int() < 11 %}
+                <div>
+                    <img src="{{item['img']}}">
+                    <div class="informacion">
+                        <p>{{item['description']}} </p>
+                        <p class="precio">$ {{item['price']}}</p>
+                        <button>Buy</button>
+                    </div>
+                </div>
+            {%endif%}
+        {%endfor%}
     </div>
 {%endblock%}

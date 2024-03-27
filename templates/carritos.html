@@ -14,96 +14,26 @@
 {%block content%}
     <h1>Carrito</h1>
     <div class="contenedor" id="contenedor">
-        <div>
-            <img src="../storage/img/blackLongJacket.webp" alt="chaqueta 2">
+        {% for item in peticion %}
             <div>
-                <div class="informacion">
-                    <p>Long black jacket</p>
-                    <p class="precio">$180000</p>
+                <img src="{{item['img']}}">
+                <div>
+                    <div class="informacion">
+                        <p>{{item['description']}}</p>
+                        <p class="precio">$ {{item['price']}}</p>
+                    </div>
+                    <div class="cantidad">
+                        <p>Cantidad</p>
+                        <p>1</p>
+                    </div>
+                    <div class="sub">
+                        <p>Sub-Total</p>
+                        <p>$ {{item['price']}}</p>
+                    </div>
                 </div>
-                <div class="cantidad">
-                    <p>Cantidad</p>
-                    <p>1</p>
-                </div>
-                <div class="sub">
-                    <p>Sub-Total</p>
-                    <p>$ 180000</p>
-                </div>
+                <a href="#"><i class='bx bx-trash'></i></a>
             </div>
-            <a href="#"><i class='bx bx-trash'></i></a>
-        </div>
-        <div>
-            <img src="../storage/img/nezukoTshirt.webp" alt="camisetas 2">
-            <div>
-                <div class="informacion">
-                    <p>Nezuko t-shirt</p>
-                    <p class="precio">$60000</p>
-                </div>
-                <div class="cantidad">
-                    <p>Cantidad</p>
-                    <p>1</p>
-                </div>
-                <div class="sub">
-                    <p>Sub-Total</p>
-                    <p>$ 60000</p>
-                </div>
-            </div>
-            <a href="#"><i class='bx bx-trash'></i></a>
-        </div>
-        <div>
-            <img src="../storage/img/pantalonMilitar.webp" alt="pantalon 1">
-            <div>
-                <div class="informacion">
-                    <p>Military pant men</p>
-                    <p class="precio">$100000</p>
-                </div>
-                <div class="cantidad">
-                    <p>Cantidad</p>
-                    <p>1</p>
-                </div>
-                <div class="sub">
-                    <p>Sub-Total</p>
-                    <p>$ 100000</p>
-                </div>
-            </div>
-            <a href="#"><i class='bx bx-trash'></i></a>
-        </div>
-        <div>
-            <img src="../storage/img/whiteLongJacket.webp" alt="pantalon 1">
-            <div>
-                <div class="informacion">
-                    <p>Long white jacket</p>
-                    <p class="precio">$180000</p>
-                </div>
-                <div class="cantidad">
-                    <p>Cantidad</p>
-                    <p>1</p>
-                </div>
-                <div class="sub">
-                    <p>Sub-Total</p>
-                    <p>$ 180000</p>
-                </div>
-            </div>
-            <a href="#"><i class='bx bx-trash'></i></a>
-        </div>
-        <div>
-            <img src="../storage/img/poloWhite.webp" alt="pantalon 1">
-            <div>
-                <div class="informacion">
-                    <p>White polo</p>
-                    <p class="precio">$60000</p>
-                </div>
-                <div class="cantidad">
-                    <p>Cantidad</p>
-                    <p>1</p>
-                </div>
-                <div class="sub">
-                    <p>Sub-Total</p>
-                    <p>$ 60000</p>
-                </div>
-            </div>
-            <a href="#"><i class='bx bx-trash'></i></a>
-        </div>
+        {%endfor%}
     </div>
     <div class="pay__process">
         <section class="clean__cart">
@@ -112,7 +42,7 @@
         <section class="buy__now">
             <div class="total">
                 <p>Total</p>
-                <p>$ 580000</p>
+                <p>$ 1590000</p>
             </div>
             <a href="{{url_for('emptcart')}}"><button onclick="alert('Gracias por tu compra')">Comprar Ahora</button></a>
         </section>
