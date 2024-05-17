@@ -1,4 +1,17 @@
-let carrito = ``;
+let container = document.getElementById("contenedor");
+let title = container.previousElementSibling
+
+const buttonFocused = (btn) => {
+    let boton = document.querySelectorAll('button')
+    boton.forEach(val => {
+        let [child] = val.childNodes
+        if(child.id == btn){
+            child.classList.add('active')
+        } else if (child.getAttribute == 'active' && child.id != btn) child.classList.remove('active')
+    })
+    
+}
+
 export function empty_Cart () {
     document.querySelector('.contenedor_carritos').innerHTML = '<p>Tu carrito esta vacio :(</p>';
     carrito = ``;
@@ -13,45 +26,37 @@ export function comprar () {
     items = 0;
     document.getElementById('counter').innerHTML = items;
 }
-export function index() {
-    document.querySelector('.body_products_index').innerHTML = `<h1>Todos los productos</h1>
-    <div class="contenedor" id="contenedor">
-        
-    </div>`;
+export function index(btn) {
+    container.innerHTML = ""
+    title.textContent = 'Todos los productos'
+    
     document.querySelectorAll('#hoodies, #tshirt, #pants, #carrito').forEach(elemento => {
         elemento.classList.remove('active')
     })
     document.getElementById('all').classList.add('active')
     document.getElementById('counter').innerHTML = items;
 }
-export function abrigos () {
-    document.querySelector('.body_products_index').innerHTML = `
-    <h1>Abrigos</h1>
-    <div class="contenedor" id="contenedor">
-    
-    </div>`;
+export function abrigos (btn) {
+    container.innerHTML = ""
+    title.textContent = 'Abrigos'
     document.querySelectorAll('#all, #tshirt, #pants, #carrito').forEach(elemento => {
         elemento.classList.remove('active')
     })
     document.getElementById('hoodies').classList.add('active')
     document.getElementById('counter').innerHTML = items;
 }
-export function camisetas() {
-    document.querySelector('.body_products_index').innerHTML = `<h1>Camisetas</h1>
-    <div class="contenedor" id="contenedor">
-    
-    </div>`;
+export function camisetas(btn) {
+    container.innerHTML = ""
+    title.textContent = 'Camisetas'
     document.querySelectorAll('#all, #hoodies, #pants, #carrito').forEach(elemento => {
         elemento.classList.remove('active')
     })
     document.getElementById('tshirt').classList.add('active')
     document.getElementById('counter').innerHTML = items;
 }
-export function pantalones() {
-    document.querySelector('.body_products_index').innerHTML = `<h1>Pantalones</h1>
-    <div class="contenedor" id="contenedor">
-    
-    </div>`
+export function pantalones(btn) {
+    container.innerHTML = "";
+    title.textContent = 'Pantalones'
     document.querySelectorAll('#all, #hoodies, #tshirt, #carrito').forEach(elemento => {
         elemento.classList.remove('active')
     })
@@ -59,7 +64,7 @@ export function pantalones() {
     document.getElementById('counter').innerHTML = items;
 }
 
-export function cart() {
+export function cart(btn) {
     document.querySelector('.body_products_index').innerHTML = `<h1>Carrito</h1>
     <div class="contenedor contenedor_carritos" id="contenedor_cart">
     </div>

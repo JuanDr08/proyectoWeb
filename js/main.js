@@ -5,20 +5,21 @@ let boton = document.querySelectorAll('button')
 boton.forEach(val => {
     val.addEventListener('click', () => {
         let [child] = val.childNodes
-        if (child.getAttribute('id') == 'all') {
-            mod.index()
+        console.log(child.getAttribute('class'));
+        if (child.id == 'all') {
+            mod.index(child.id)
         }
-        else if (child.getAttribute('id') == "hoodies") {
-            mod.abrigos()
+        else if (child.id == "hoodies") {
+            mod.abrigos(child.id)
         }
-        else if (child.getAttribute('id') == "tshirt") {
-            mod.camisetas()
+        else if (child.id == "tshirt") {
+            mod.camisetas(child.id)
         }
-        else if (child.getAttribute('id') == "pants") {
-            mod.pantalones()
+        else if (child.id == "pants") {
+            mod.pantalones(child.id)
         }
-        else if (child.getAttribute('id') == "carrito") {
-            mod.cart()
+        else if (child.id == "carrito") {
+            mod.cart(child.id)
         }
     })
 })
