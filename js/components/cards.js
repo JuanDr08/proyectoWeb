@@ -1,18 +1,18 @@
 
 //Estructura card comun
-`<div>
+/* <div>
     <img src="storage/img/blackJacket.webp" alt="chaqueta 1">
     <div class="informacion">
         <p>black leather jacket</p>
         <p class="precio">$100000</p>
         <button onclick="botones(1)">Buy</button>
     </div>
-</div>`
+</div> */
 
 //Estructura card carrito
 
-`
-<div>
+
+/* <div>
     <img src="storage/img/omegaHoodie.webp" alt="chaqueta 5">
     <div>
         <div class="informacion_cart">
@@ -29,5 +29,4 @@
         </div>
     </div>
     <button onclick="borrar()" class="eliminar"><i class='bx bx-trash'></i></button>
-</div>
-`
+</div> */

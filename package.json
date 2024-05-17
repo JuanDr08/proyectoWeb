@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "dev": "node --watch js/main.js",
     "db": "json-server db/products.json"
   },
   "keywords": [],
