@@ -1,16 +1,39 @@
 let container = document.getElementById("contenedor");
-let title = container.previousElementSibling
+let title = ""
 
 const buttonFocused = (btn) => {
     let boton = document.querySelectorAll('button')
     boton.forEach(val => {
         let [child] = val.childNodes
-        if(child.id == btn){
-            child.classList.add('active')
-        } else if (child.getAttribute == 'active' && child.id != btn) child.classList.remove('active')
+        if(child.id != undefined){
+
+            let clase = child.getAttribute('class')
+            if (clase != null) {
+                if (!clase.includes("active") && child.id == btn)child.classList.add("active")
+                else if (clase.includes("active") && child.id != btn) child.classList.remove("active")
+            }else if (clase == null && child.id == btn) child.classList.add("active")
+
+        }
     })
-    
 }
+
+
+
+
+
+const deleteCartView = (ttl) => {
+    let contenedor = document.querySelector('.body__products')
+    let cartContainer = document.querySelector('.contenedor_carritos')
+    if (contenedor.childElementCount == 3) {
+        contenedor.removeChild(contenedor.lastChild)
+        contenedor.replaceChild(container, cartContainer)
+    } 
+    contenedor.firstElementChild.textContent = ttl
+}
+
+
+
+
 
 export function empty_Cart () {
     document.querySelector('.contenedor_carritos').innerHTML = '<p>Tu carrito esta vacio :(</p>';
@@ -18,50 +41,44 @@ export function empty_Cart () {
     precio = 0;
     items = 0;
     document.getElementById('total_pagar').innerHTML = '$ ' + precio.toString() ;
-    document.getElementById('counter').innerHTML = items;
+    
 }
 export function comprar () {
     alert('Gracias por tu compra, esta en camino, llegara en unos dias')
     document.querySelector('.contenedor_carritos').innerHTML = '<p>Tu carrito esta vacio :(</p>';
     items = 0;
-    document.getElementById('counter').innerHTML = items;
+    
 }
 export function index(btn) {
+    title = 'Todos los productos'
+    deleteCartView(title)
+    buttonFocused(btn)
     container.innerHTML = ""
-    title.textContent = 'Todos los productos'
     
-    document.querySelectorAll('#hoodies, #tshirt, #pants, #carrito').forEach(elemento => {
-        elemento.classList.remove('active')
-    })
-    document.getElementById('all').classList.add('active')
-    document.getElementById('counter').innerHTML = items;
+    
+
+    
 }
 export function abrigos (btn) {
+    title = 'Abrigos'
+    deleteCartView(title)
     container.innerHTML = ""
-    title.textContent = 'Abrigos'
-    document.querySelectorAll('#all, #tshirt, #pants, #carrito').forEach(elemento => {
-        elemento.classList.remove('active')
-    })
-    document.getElementById('hoodies').classList.add('active')
-    document.getElementById('counter').innerHTML = items;
+
+    buttonFocused(btn)
 }
 export function camisetas(btn) {
+    title = 'Camisetas'
+    deleteCartView(title)
     container.innerHTML = ""
-    title.textContent = 'Camisetas'
-    document.querySelectorAll('#all, #hoodies, #pants, #carrito').forEach(elemento => {
-        elemento.classList.remove('active')
-    })
-    document.getElementById('tshirt').classList.add('active')
-    document.getElementById('counter').innerHTML = items;
+
+    buttonFocused(btn)
 }
 export function pantalones(btn) {
+    title = 'Pantalones'
+    deleteCartView(title)
     container.innerHTML = "";
-    title.textContent = 'Pantalones'
-    document.querySelectorAll('#all, #hoodies, #tshirt, #carrito').forEach(elemento => {
-        elemento.classList.remove('active')
-    })
-    document.getElementById('pants').classList.add('active')
-    document.getElementById('counter').innerHTML = items;
+
+    buttonFocused(btn)
 }
 
 export function cart(btn) {
@@ -80,12 +97,8 @@ export function cart(btn) {
             <button onclick="comprar()">Comprar Ahora</button>
         </section>
     </div>`
-    document.querySelectorAll('#all, #hoodies, #tshirt, #pants').forEach(elemento => {
-        elemento.classList.remove('active')
-    })
-    document.getElementById('carrito').classList.add('active')
-    document.getElementById('counter').innerHTML = items;
-    document.getElementById('total_pagar').innerHTML = '$ ' + precio;
-    document.querySelector('.contenedor_carritos').innerHTML = carrito;
+
+    buttonFocused(btn)
+
 
 }
