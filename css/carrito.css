@@ -1,9 +1,6 @@
 @import url(variables.css);
 @import url(style.css);
 
-.contenedor_carritos > div > img {
-    border-radius: 20px 20px 20px 20px;
-}
 
 
 
@@ -20,8 +17,8 @@
     gap: 2vw;
     margin-bottom: 1vw;
 }
-.contenedor_carritos > div {
-    width: 80%;
+.contenedor_carritos > my-cartcard {
+    width: 80% !important;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,55 +26,6 @@
     padding-bottom: 0 !important;
 }
 
-.contenedor_carritos > div > button i {
-    font-size: 1.5vw;
-    color: var(--color-hover);
-}
-.contenedor_carritos > div > button  {
-    /* background: none; */
-    border: none;
-    cursor: pointer;
-    transition: 1s;
-    background: none;
-}
-.contenedor_carritos > div > button:active > i{
-    color: red;
-}
-.contenedor_carritos > div > button:hover > i {
-    scale: 1.1;
-}
-.contenedor_carritos > div > div {
-    display: flex;
-    align-items: center;
-    gap: 2vw;
-}
-.informacion_cart,
-.cantidad,
-.sub {
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px;
-}
-.informacion_cart p:first-child,
-.cantidad p:first-child,
-.sub p:first-child {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3vw;
-    font-weight: 600; 
-    color: var(--color-hover);
-    text-align: center;
-    
-}
-.cantidad p:last-child,
-.informacion_cart p:last-child,
-.sub p:last-child {
-    width: 100%;
-    text-align: center;
-    font-weight: 500;
-    font-size: 1vw;
-}
 
 .pay__process {
     height: 10%;
@@ -150,36 +98,6 @@
         height: 80%;
         gap: 5vh;
         margin-bottom: 0;
-    }
-    .contenedor_carritos > div img {
-        width: 15vh;
-        height: 15vh;
-    }
-    .contenedor_carritos > div {
-        width: 90%;
-        animation-range: entry 10% cover 12% !important;
-    }
-    .contenedor_carritos > div button i {
-        font-size: 2vh;
-    }
-    .contenedor_carritos > div > div {
-        flex-direction: column;
-        gap: 0;
-    }
-    .informacion_cart,
-    .cantidad,
-    .sub {
-        gap: 0;
-    }
-    .informacion_cart p:first-child,
-    .cantidad p:first-child,
-    .sub p:first-child {
-        font-size: 2vh;
-    }
-    .cantidad p:last-child,
-    .informacion_cart p:last-child,
-    .sub p:last-child {
-        font-size: 1.5vh;
     }
     .clean__cart {
         width: 15vh;

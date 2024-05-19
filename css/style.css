@@ -122,12 +122,14 @@ img {
     font-size: 3vw;
     font-family: 'Montserrat', sans-serif;
 }
-.contenedor > my-card {
+.contenedor > my-card,
+.contenedor > my-cartcard {
     box-shadow: 0 0 15px var(--color-hover);
     background: var(--color-cards);
     border-radius: 20px;
     height: max-content;
-    width: 15vw;
+    width: 240px;
+    text-align: center;
     padding-bottom: 1vh;
     
     animation: reveal linear both;
@@ -146,7 +148,8 @@ img {
         scale: 1;
 	}
 }
-.contenedor > my-card:hover {
+.contenedor > my-card:hover,
+.contenedor > my-cartcard:hover {
     background: var(--color-darkcards);
     transition: all .5s;
 } 
@@ -289,8 +292,10 @@ img {
         font-size: 3vh;
         justify-content: center;
     }
-    .contenedor > my-card {
+    .contenedor > my-card,
+    .contenedor > my-cartcard {
         box-shadow: 0 0 10px var(--color-hover);
+        width: max-content;
     }
     .informacion {
         height: 8vh;

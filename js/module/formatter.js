@@ -2,6 +2,7 @@ import * as comp from '../components/index.js'
 
 
 customElements.define("my-card", comp.SimpleCard)
+customElements.define("my-cartcard", comp.CartCard)
 
 
 let container = document.getElementById("contenedor");

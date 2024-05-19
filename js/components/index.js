@@ -1,8 +1,9 @@
-import {} from './searchers.js'
 import {
-    SimpleCard
+    SimpleCard,
+    CartCard
 } from './cards.js'
 
 export {
-    SimpleCard
+    SimpleCard,
+    CartCard
 }
