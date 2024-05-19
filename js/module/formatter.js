@@ -1,3 +1,9 @@
+import * as comp from '../components/index.js'
+
+
+customElements.define("my-card", comp.SimpleCard)
+
+
 let container = document.getElementById("contenedor");
 let title = ""
 

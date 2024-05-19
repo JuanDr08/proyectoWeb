@@ -1,2 +1,8 @@
 import {} from './searchers.js'
-import {} from './cards.js'
+import {
+    SimpleCard
+} from './cards.js'
+
+export {
+    SimpleCard
+}

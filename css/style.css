@@ -122,11 +122,12 @@ img {
     font-size: 3vw;
     font-family: 'Montserrat', sans-serif;
 }
-.contenedor > div {
+.contenedor > my-card {
     box-shadow: 0 0 15px var(--color-hover);
     background: var(--color-cards);
     border-radius: 20px;
     height: max-content;
+    width: 15vw;
     padding-bottom: 1vh;
     
     animation: reveal linear both;
@@ -145,10 +146,9 @@ img {
         scale: 1;
 	}
 }
-.contenedor > div:hover {
+.contenedor > my-card:hover {
     background: var(--color-darkcards);
-    scale: 1.1 !important;
-
+    transition: all .5s;
 } 
 .informacion {
     height: 8vw;
@@ -289,7 +289,7 @@ img {
         font-size: 3vh;
         justify-content: center;
     }
-    .contenedor > div {
+    .contenedor > my-card {
         box-shadow: 0 0 10px var(--color-hover);
     }
     .informacion {
