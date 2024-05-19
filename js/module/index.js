@@ -8,8 +8,12 @@ import {
 import {
     getAllHoodies
 } from './hoodiesRQ.js'
-import {} from './T-shirtsRQ.js'
-import {} from './pantsRQ.js'
+import {
+    getAllTshirts
+} from './T-shirtsRQ.js'
+import {
+    getAllPants
+} from './pantsRQ.js'
 import {} from './cartRQ.js'
 import {
     getAnyClotheByNameAndId
@@ -22,5 +26,7 @@ export {
     pantalones,
     cart,
     getAnyClotheByNameAndId,
-    getAllHoodies
+    getAllHoodies,
+    getAllPants,
+    getAllTshirts
 }

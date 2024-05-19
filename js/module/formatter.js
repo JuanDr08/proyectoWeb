@@ -1,4 +1,5 @@
 import * as comp from '../components/index.js'
+import * as mod from './index.js'
 
 
 customElements.define("my-card", comp.SimpleCard)
@@ -56,36 +57,60 @@ export function comprar () {
     items = 0;
     
 }
-export function index(btn) {
+export const index = async (btn) => {
     title = 'Todos los productos'
     deleteCartView(title)
     buttonFocused(btn)
     container.innerHTML = ""
-    
-    
-
-    
+    let hod = await mod.getAllHoodies();
+    let shirt = await mod.getAllTshirts();
+    let pant = await mod.getAllPants();
+    let catalogo = [...hod, ...shirt, ...pant]
+    catalogo.forEach((val, i) => {
+        console.log(val.id);
+        let card = document.createElement("my-card")
+        if (i <= 4) card.setAttribute("abrigo", val.id)
+        else if (i <= 9) card.setAttribute("camiseta", val.id)
+        else if (i <= 14) card.setAttribute("pantalon", val.id)
+        container.appendChild(card)
+    })
 }
-export function abrigos (btn) {
+export const abrigos = async (btn) => {
     title = 'Abrigos'
     deleteCartView(title)
     container.innerHTML = ""
-
     buttonFocused(btn)
+    let hod = await mod.getAllHoodies();
+    hod.forEach(val => {
+        let card = document.createElement("my-card")
+        card.setAttribute("abrigo", val.id)
+        container.appendChild(card)
+    })
 }
-export function camisetas(btn) {
+export const camisetas = async (btn) => {
     title = 'Camisetas'
     deleteCartView(title)
     container.innerHTML = ""
-
     buttonFocused(btn)
+    let shirt = await mod.getAllTshirts();
+    shirt.forEach(val => {
+        let card = document.createElement("my-card")
+        card.setAttribute("camiseta", val.id)
+        container.appendChild(card)
+    })
 }
-export function pantalones(btn) {
+export const pantalones = async (btn) => {
     title = 'Pantalones'
     deleteCartView(title)
     container.innerHTML = "";
-
     buttonFocused(btn)
+    let pant = await mod.getAllPants();
+    pant.forEach(val => {
+        let card = document.createElement("my-card")
+        card.setAttribute("pantalon", val.id)
+        container.appendChild(card)
+    })
+
 }
 
 export function cart(btn) {

@@ -1,8 +1,7 @@
 import * as mod from './module/index.js'
-import * as comp from './components/index.js'
 
 let boton = document.querySelectorAll('button')
-
+mod.index("all")
 boton.forEach(val => {
     val.addEventListener('click', () => {
         let [child] = val.childNodes
