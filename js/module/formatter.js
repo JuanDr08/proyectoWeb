@@ -67,7 +67,6 @@ export const index = async (btn) => {
     let pant = await mod.getAllPants();
     let catalogo = [...hod, ...shirt, ...pant]
     catalogo.forEach((val, i) => {
-        console.log(val.id);
         let card = document.createElement("my-card")
         if (i <= 4) card.setAttribute("abrigo", val.id)
         else if (i <= 9) card.setAttribute("camiseta", val.id)

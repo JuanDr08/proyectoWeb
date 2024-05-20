@@ -4,6 +4,7 @@ export class SimpleCard extends HTMLElement {
     name
     price
     src
+    btn
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -21,6 +22,7 @@ export class SimpleCard extends HTMLElement {
         this.name = this.shadowRoot.querySelector(".name");
         this.price = this.shadowRoot.querySelector(".precio");
         this.src = this.shadowRoot.querySelector("img")
+        this.btn = this.shadowRoot.querySelector(".add")
     }
 
     async generateACardWithCode(clothe ,id) {
@@ -28,6 +30,10 @@ export class SimpleCard extends HTMLElement {
         this.src.setAttribute("src", res.imagen)
         this.name.textContent = res.nombre
         this.price.textContent = "$ " + res.precio
+        this.btn.addEventListener('click', async() => {
+            let clthName = clothe + "Id"
+            await m.sendData(clthName, Number(id))
+        })
     }
 
     static get observedAttributes() {
