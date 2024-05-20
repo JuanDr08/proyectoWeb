@@ -10,7 +10,7 @@ export const sendData = async (clthName, clthID) => {
         config.body = JSON.stringify({
             [clthName]: clthID,
             cantidad: 1,
-            id: cart.length + 1
+            id: `${cart.length + 1}`
         })
         fetch("http://localhost:3000/carrito", config)
     }else {
@@ -20,15 +20,14 @@ export const sendData = async (clthName, clthID) => {
                 config.body = JSON.stringify({
                     cantidad: val.cantidad + 1
                 })
-                console.log(config);
-                fetch(`http://localhost:3000/carrito`, config)
-                break
+                fetch(`http://localhost:3000/carrito/${val.id}`, config)
+                return val.cantidad + 1
             }else if (val.id == cart.length){
                 config.method = "POST"
                 config.body = JSON.stringify({
                     [clthName]: clthID,
                     cantidad: 1,
-                    id: cart.length + 1
+                    id: `${cart.length + 1}`
                 })
                 fetch("http://localhost:3000/carrito", config)
             }

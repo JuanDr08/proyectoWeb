@@ -21,8 +21,8 @@ export class SimpleCard extends HTMLElement {
         `
         this.name = this.shadowRoot.querySelector(".name");
         this.price = this.shadowRoot.querySelector(".precio");
-        this.src = this.shadowRoot.querySelector("img")
-        this.btn = this.shadowRoot.querySelector(".add")
+        this.src = this.shadowRoot.querySelector("img");
+        this.btn = this.shadowRoot.querySelector(".add");
     }
 
     async generateACardWithCode(clothe ,id) {
@@ -32,7 +32,7 @@ export class SimpleCard extends HTMLElement {
         this.price.textContent = "$ " + res.precio
         this.btn.addEventListener('click', async() => {
             let clthName = clothe + "Id"
-            await m.sendData(clthName, Number(id))
+            await m.sendData(clthName, id)
         })
     }
 
@@ -53,6 +53,7 @@ export class CartCard extends HTMLElement {
     name
     price
     src
+    cuantity
     constructor(){
         super()
         this.attachShadow({ mode: "open" });
@@ -166,6 +167,7 @@ export class CartCard extends HTMLElement {
         this.name = this.shadowRoot.querySelector(".informacion_cart p")
         this.price = this.shadowRoot.querySelector(".precio")
         this.src = this.shadowRoot.querySelector("img")
+        this.cuantity = this.shadowRoot.querySelector(".cantidad").lastElementChild
     }
     async generateACardWithCode(clothe ,id) {
         let [res] = await m.getAnyClotheByNameAndId(clothe, id)
