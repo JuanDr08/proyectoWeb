@@ -15,7 +15,9 @@ import {
     getAllPants
 } from './pantsRQ.js'
 import {
-    sendData
+    sendData,
+    getCartData,
+    deleteDataFromCart
 } from './cartRQ.js'
 import {
     getAnyClotheByNameAndId
@@ -31,5 +33,7 @@ export {
     getAllHoodies,
     getAllPants,
     getAllTshirts,
-    sendData
+    sendData,
+    getCartData,
+    deleteDataFromCart
 }

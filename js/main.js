@@ -22,3 +22,7 @@ boton.forEach(val => {
         }
     })
 })
+
+let counter = await mod.getCartData()
+let cart = document.getElementById('counter')
+counter ? cart.textContent = counter.length : cart.textContent = 0

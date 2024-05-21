@@ -21,7 +21,7 @@ export const sendData = async (clthName, clthID) => {
                     cantidad: val.cantidad + 1
                 })
                 fetch(`http://localhost:3000/carrito/${val.id}`, config)
-                return val.cantidad + 1
+                break
             }else if (val.id == cart.length){
                 config.method = "POST"
                 config.body = JSON.stringify({
@@ -40,3 +40,17 @@ export const getCartData = async () => {
     return res;
 }
 
+export const deleteDataFromCart = async (all = false, clthName = "0", clthId = "0") => {
+    let config = {
+        method: "DELETE",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({})
+    }
+    if (all){
+        fetch(`http://localhost:3000/carrito/${clthId}`, config)
+    }else {
+
+    }
+}

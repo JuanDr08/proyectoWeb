@@ -43,11 +43,13 @@ const deleteCartView = (ttl) => {
 
 
 
-export function empty_Cart () {
-    document.querySelector('.contenedor_carritos').innerHTML = '<p>Tu carrito esta vacio :(</p>';
-    carrito = ``;
-    precio = 0;
-    items = 0;
+export const empty_Cart = async() => {
+    let cart = await mod.getCartData()
+    cart.forEach(val => {
+        let keys = Object.keys(val)
+        mod.deleteDataFromCart(true, "0", `${val.id}`)
+    })
+    
     document.getElementById('total_pagar').innerHTML = '$ ' + precio.toString() ;
     
 }
@@ -112,22 +114,79 @@ export const pantalones = async (btn) => {
 
 }
 
-export function cart(btn) {
-    document.querySelector('.body_products_index').innerHTML = `<h1>Carrito</h1>
-    <div class="contenedor contenedor_carritos" id="contenedor_cart">
-    </div>
-    <div class="pay__process">
-        <section class="clean__cart">
-            <button onclick="empty_Cart()"><p>Vaciar carrito</p></button>
-        </section>
-        <section class="buy__now">
-            <div class="total">
-                <p>Total</p>
-                <p id="total_pagar">$ 0</p>
-            </div>
-            <button onclick="comprar()">Comprar Ahora</button>
-        </section>
-    </div>`
+export const cart = async (btn) => {
+    let body = document.querySelector('.body_products_index')
+    body.removeChild(body.lastChild)
+    body.firstElementChild.textContent = "Carrito"
+    container.id = "contenedor_cart"
+    container.classList.add('contenedor_carritos')
+    container.innerHTML = ""
+    body.appendChild(container)
+    let cart = await mod.getCartData()
+    cart.forEach(val => {
+        let [, llaves] = Object.keys(val)
+        let clothe = llaves.substring(0,(llaves.length - 2))
+        let card = document.createElement("my-cartcard")
+        card.setAttribute(clothe, val[llaves])
+        card.cuantity.textContent = val.cantidad
+        container.appendChild(card)
+    })
+    let div = document.createElement("div");
+    div.classList.add("pay__process")
+    let sectionOne = document.createElement("section");
+    sectionOne.classList.add("clean__cart")
+    let sectionTwo = document.createElement("section");
+    sectionTwo.classList.add("buy__now")
+    let buttonOne = document.createElement("button");
+    buttonOne.classList.add("clean")
+    let pButOne = document.createElement("p")
+    pButOne.textContent= "Vaciar carrito"
+    buttonOne.appendChild(pButOne)
+    let buttonTwo = document.createElement("button");
+    buttonTwo.classList.add("buy")
+    buttonTwo.textContent = "Comprar Ahora"
+    let divSectTwo = document.createElement("div");
+    divSectTwo.classList.add("total")
+    let pOne = document.createElement("p");
+    pOne.textContent = "Total"
+    let pTwo = document.createElement("p");
+    pTwo.id = "total_pagar"
+    pTwo.textContent = "$ 0";
+    sectionOne.appendChild(buttonOne);
+    divSectTwo.append(pOne, pTwo)
+    sectionTwo.append(divSectTwo, buttonTwo)
+    div.append(sectionOne, sectionTwo)
+    body.appendChild(div)
+    if (cart.length > 0) {
+        let evento = document.querySelectorAll(".clean, .buy")
+        evento.forEach(val => {
+        val.addEventListener("click", (e) => {
+            if(e.target.innerHTML.includes("Vaciar")){
+                if(confirm("Seguro desea vacear el carrito?")){
+                    empty_Cart()
+                } else alert("Esta bien :D")
+            } else comprar()
+            
+        })
+    })
+    } else {
+        container.innerHTML = '<p>Tu carrito esta vacio :(</p>';
+    }
+    
+
+    // let footer = `
+    // <div class="pay__process">
+    //     <section class="clean__cart">
+    //         <button onclick="empty_Cart()"><p>Vaciar carrito</p></button>
+    //     </section>
+    //     <section class="buy__now">
+    //         <div class="total">
+    //             <p>Total</p>
+    //             <p id="total_pagar">$ 0</p>
+    //         </div>
+    //         <button onclick="comprar()">Comprar Ahora</button>
+    //     </section>
+    // </div>`
 
     buttonFocused(btn)
 

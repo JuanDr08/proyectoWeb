@@ -163,7 +163,7 @@ img {
 }
 .informacion p:first-child {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.3vw;
+    font-size: 1.2rem;
     font-weight: 500; 
     color: var(--color-hover);
 }
