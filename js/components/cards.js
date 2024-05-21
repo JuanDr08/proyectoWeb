@@ -54,6 +54,7 @@ export class CartCard extends HTMLElement {
     price
     src
     cuantity
+    delete
     constructor(){
         super()
         this.attachShadow({ mode: "open" });
@@ -168,12 +169,16 @@ export class CartCard extends HTMLElement {
         this.price = this.shadowRoot.querySelector(".precio")
         this.src = this.shadowRoot.querySelector("img")
         this.cuantity = this.shadowRoot.querySelector(".cantidad").lastElementChild
+        this.delete = this.shadowRoot.querySelector(".eliminar")
     }
     async generateACardWithCode(clothe ,id) {
         let [res] = await m.getAnyClotheByNameAndId(clothe, id)
         this.src.setAttribute("src", res.imagen)
         this.name.textContent = res.nombre
         this.price.textContent = "$ " + res.precio
+        this.delete.addEventListener("click", (e)=> {
+            m.deleteDataFromCart(false, id)
+        })
     }
     static get observedAttributes() {
         return ["abrigo", "pantalon", "camiseta"];

@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch js/main.js",
-    "db": "json-server --watch db/products.json -p 3000"
+    "db": "json-server --watch db/products.json -p 5501"
   },
   "keywords": [],
   "author": "",

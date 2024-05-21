@@ -46,18 +46,20 @@ const deleteCartView = (ttl) => {
 export const empty_Cart = async() => {
     let cart = await mod.getCartData()
     cart.forEach(val => {
-        let keys = Object.keys(val)
-        mod.deleteDataFromCart(true, "0", `${val.id}`)
+        mod.deleteDataFromCart(true, `${val.id}`)
     })
     
-    document.getElementById('total_pagar').innerHTML = '$ ' + precio.toString() ;
+    // document.getElementById('total_pagar').innerHTML = '$ ' + precio.toString() ;
     
 }
-export function comprar () {
-    alert('Gracias por tu compra, esta en camino, llegara en unos dias')
-    document.querySelector('.contenedor_carritos').innerHTML = '<p>Tu carrito esta vacio :(</p>';
-    items = 0;
-    
+export const comprar = async () => {
+    if(confirm("Deseas realizar la compra definitivamente?")){
+        let cart = await mod.getCartData()
+        cart.forEach(val => {
+        mod.deleteDataFromCart(true, `${val.id}`)
+        })
+        alert("Compra realizada satisfactoriamente")
+    } else confirm("Esta bien :(")
 }
 export const index = async (btn) => {
     title = 'Todos los productos'

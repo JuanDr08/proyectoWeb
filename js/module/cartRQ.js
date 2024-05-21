@@ -12,7 +12,7 @@ export const sendData = async (clthName, clthID) => {
             cantidad: 1,
             id: `${cart.length + 1}`
         })
-        fetch("http://localhost:3000/carrito", config)
+        fetch("http://localhost:5501/carrito", config)
     }else {
         for (let val of cart) {
             if (clthName in val && clthID == val[clthName]){
@@ -20,7 +20,7 @@ export const sendData = async (clthName, clthID) => {
                 config.body = JSON.stringify({
                     cantidad: val.cantidad + 1
                 })
-                fetch(`http://localhost:3000/carrito/${val.id}`, config)
+                fetch(`http://localhost:5501/carrito/${val.id}`, config)
                 break
             }else if (val.id == cart.length){
                 config.method = "POST"
@@ -29,18 +29,18 @@ export const sendData = async (clthName, clthID) => {
                     cantidad: 1,
                     id: `${cart.length + 1}`
                 })
-                fetch("http://localhost:3000/carrito", config)
+                fetch("http://localhost:5501/carrito", config)
             }
         }
     }
 }
 
 export const getCartData = async () => {
-    let res = await fetch("http://localhost:3000/carrito").then(res => res.json());
+    let res = await fetch("http://localhost:5501/carrito").then(res => res.json());
     return res;
 }
 
-export const deleteDataFromCart = async (all = false, clthName = "0", clthId = "0") => {
+export const deleteDataFromCart = async (all = false, clthId = "0") => {
     let config = {
         method: "DELETE",
         headers: {
@@ -49,8 +49,8 @@ export const deleteDataFromCart = async (all = false, clthName = "0", clthId = "
         body: JSON.stringify({})
     }
     if (all){
-        fetch(`http://localhost:3000/carrito/${clthId}`, config)
+        fetch(`http://localhost:5501/carrito/${clthId}`, config)
     }else {
-
+        if(confirm("Estas seguro que deseas eliminar el elemento?")) fetch(`http://localhost:5501/carrito/${clthId}`, config)
     }
 }
