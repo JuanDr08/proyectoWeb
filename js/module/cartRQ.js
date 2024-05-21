@@ -40,7 +40,7 @@ export const getCartData = async () => {
     return res;
 }
 
-export const deleteDataFromCart = async (all = false, clthId = "0") => {
+export const deleteDataFromCart = async (all = false, clthName = "0" ,clthId = "0") => {
     let config = {
         method: "DELETE",
         headers: {
@@ -51,6 +51,13 @@ export const deleteDataFromCart = async (all = false, clthId = "0") => {
     if (all){
         fetch(`http://localhost:5501/carrito/${clthId}`, config)
     }else {
-        if(confirm("Estas seguro que deseas eliminar el elemento?")) fetch(`http://localhost:5501/carrito/${clthId}`, config)
+        if(confirm("Estas seguro que deseas eliminar el elemento?")){
+            let cart = await getCartData()
+            cart.forEach(val => {
+                if(clthName in val){
+                    fetch(`http://localhost:5501/carrito/${val.id}`, config)
+                } 
+            })
+        }
     }
 }

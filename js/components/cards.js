@@ -177,7 +177,8 @@ export class CartCard extends HTMLElement {
         this.name.textContent = res.nombre
         this.price.textContent = "$ " + res.precio
         this.delete.addEventListener("click", (e)=> {
-            m.deleteDataFromCart(false, id)
+            let clthName = clothe + "Id"
+            m.deleteDataFromCart(false, clthName ,id)
         })
     }
     static get observedAttributes() {
