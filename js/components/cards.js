@@ -1,6 +1,7 @@
 import * as m from '../module/index.js'
 // Estructura Card comun
 export class SimpleCard extends HTMLElement {
+    // Propiedades que seran usadas
     name
     price
     src
@@ -8,6 +9,7 @@ export class SimpleCard extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
+        // Generacion de la estructura del componente
         this.shadowRoot.innerHTML = /*html*/`
         <link rel="stylesheet" href="../css/style.css">
         <div>
@@ -19,21 +21,23 @@ export class SimpleCard extends HTMLElement {
             </div>
         </div>
         `
+        // Asignacion de las propiedades a sus respectivos elementos del html creado
         this.name = this.shadowRoot.querySelector(".name");
         this.price = this.shadowRoot.querySelector(".precio");
         this.src = this.shadowRoot.querySelector("img");
         this.btn = this.shadowRoot.querySelector(".add");
     }
-
+    // Funcion generadora de la imagen e inforamcion de la card segun sus parametros creados
     async generateACardWithCode(clothe ,id) {
-        let [res] = await m.getAnyClotheByNameAndId(clothe, id)
-        this.src.setAttribute("src", res.imagen)
-        this.name.textContent = res.nombre
-        this.price.textContent = "$ " + res.precio
-        this.btn.addEventListener('click', async() => {
-            let clthName = clothe + "Id"
-            await m.sendData(clthName, id, res.precio)
-            alert("Producto añadido satisfactoriamente al Carrito")
+        let [res] = await m.getAnyClotheByNameAndId(clothe, id) // Se trae la data
+        this.src.setAttribute("src", res.imagen)// Se le asigna la imagen segun lo que se haya traido
+        this.name.textContent = res.nombre // Su precio segun la info traida
+        this.price.textContent = "$ " + res.precio // Su precion segun el traido
+        // Se le agrega la funcionalidad a los botones del componente
+        this.btn.addEventListener('click', async() => { // Si se presiona en añadir
+            let clthName = clothe + "Id" // Se genera el nombre del producto
+            await m.sendData(clthName, id, res.precio) // Se hace el envio de la info del producto a la funcion sendData y posteriormente publicacion al carrito
+            alert("Producto añadido satisfactoriamente al Carrito") // Alerta de finalizacion
         })
     }
 
@@ -41,6 +45,7 @@ export class SimpleCard extends HTMLElement {
         return ["abrigo", "pantalon", "camiseta"];
     }
     attributeChangedCallback(name, old, now) {
+        // Se observan los 3 tipos posibles de articulos para generar cards con ellos
         if(name == "abrigo") this.generateACardWithCode(name ,now);
         if(name == "pantalon") this.generateACardWithCode(name ,now);
         if(name == "camiseta") this.generateACardWithCode(name ,now);
@@ -51,6 +56,7 @@ export class SimpleCard extends HTMLElement {
 
 
 export class CartCard extends HTMLElement {
+    // Propiedades que seran usadas
     name
     price
     src
@@ -59,6 +65,7 @@ export class CartCard extends HTMLElement {
     constructor(){
         super()
         this.attachShadow({ mode: "open" });
+        // Generacion del html junto con el css
         this.shadowRoot.innerHTML = /*html*/`
         <style>
             div:has(img){
@@ -166,23 +173,25 @@ export class CartCard extends HTMLElement {
             <button class="eliminar"><i class='bx bx-trash'></i></button>
         </div>
         `
+        // Asignacion de las propiedades a sus respectivos elementos HTML
         this.name = this.shadowRoot.querySelector(".informacion_cart p")
         this.price = this.shadowRoot.querySelector(".precio")
         this.src = this.shadowRoot.querySelector("img")
         this.cuantity = this.shadowRoot.querySelector(".cantidad").lastElementChild
         this.delete = this.shadowRoot.querySelector(".eliminar")
     }
-    async generateACardWithCode(clothe ,id) {
-        let [res] = await m.getAnyClotheByNameAndId(clothe, id)
-        let cantidad = this.cuantity.textContent
-        this.src.setAttribute("src", res.imagen)
-        this.name.textContent = res.nombre
-        this.price.textContent = "$ " + res.precio
-        this.shadowRoot.querySelector(".sub").lastElementChild.textContent = `$ ${Number(cantidad * res.precio)}`
-        this.delete.addEventListener("click", (e)=> {
-            let clthName = clothe + "Id"
-            m.deleteDataFromCart(false, clthName , id)
-            alert("Producto eliminado satisfactoriamente")
+    async generateACardWithCode(clothe ,id) { // Generacion de card con la info que se le sea pasada
+        let [res] = await m.getAnyClotheByNameAndId(clothe, id) //Se trae la data con la info pasada
+        let cantidad = this.cuantity.textContent // Traemos el contenido del nodo de cantidad
+        this.src.setAttribute("src", res.imagen) // Generamos la imagen con la que se fue traida
+        this.name.textContent = res.nombre // Generamos nombre con el traido
+        this.price.textContent = "$ " + res.precio // Generamos precio con el traido
+        this.shadowRoot.querySelector(".sub").lastElementChild.textContent = `$ ${Number(cantidad * res.precio)}` // Generamos el subtotal multiplicando cantidad por precion individual y lo incorporamos en su respectivo nodo
+        // Funcionalidad a los botones del componente
+        this.delete.addEventListener("click", (e)=> { // Si se da click en la basura
+            let clthName = clothe + "Id" // Se genera el nombre del producto
+            m.deleteDataFromCart(false, clthName , id) // Se manda a eliminar el articulo con los datos requeridos
+            alert("Producto eliminado satisfactoriamente") // Se avisa de la eliminacion satisfactoria
         })
     }
     static get observedAttributes() {

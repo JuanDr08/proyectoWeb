@@ -1,3 +1,5 @@
+// Archivo generado para la facilitacion de la modularizacion de todo el proyecto
+
 import { 
     abrigos,
     index,
@@ -8,23 +10,16 @@ import {
     buttonFocused
  } from './formatter.js'
 import {
-    getAllHoodies
-} from './hoodiesRQ.js'
-import {
-    getAllTshirts
-} from './T-shirtsRQ.js'
-import {
-    getAllPants
-} from './pantsRQ.js'
-import {
     sendData,
     getCartData,
     deleteDataFromCart
 } from './cartRQ.js'
 import {
+    getAllHoodies,
+    getAllTshirts,
+    getAllPants,
     getAnyClotheByNameAndId
-} from './allPieces.js'
-
+} from './clothesRQ.js'
 export {
     abrigos,
     index,
