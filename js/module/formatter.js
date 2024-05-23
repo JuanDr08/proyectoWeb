@@ -9,7 +9,7 @@ customElements.define("my-cartcard", comp.CartCard)
 let container = document.getElementById("contenedor");
 let title = ""
 
-const buttonFocused = (btn) => {
+export const buttonFocused = (btn) => {
     let boton = document.querySelectorAll('button')
     boton.forEach(val => {
         let [child] = val.childNodes
@@ -26,7 +26,21 @@ const buttonFocused = (btn) => {
 }
 
 
-
+export const actualView = (actual = "all") => {
+    actual.id != undefined ? localStorage.setItem("view",actual.id) : localStorage.setItem("default",actual)
+    let prove = localStorage.getItem("view")
+    if(prove == null || prove == "all"){
+        index("all")
+    } else if (prove == "hoodies"){
+        abrigos(prove)
+    } else if (prove == "tshirt"){
+        camisetas(prove)
+    } else if (prove == "pants"){
+        pantalones(prove)
+    } else if (prove == "carrito"){
+        cart(prove)
+    }
+}
 
 
 const deleteCartView = (ttl) => {
@@ -39,24 +53,17 @@ const deleteCartView = (ttl) => {
     contenedor.firstElementChild.textContent = ttl
 }
 
-
-
-
-
 export const empty_Cart = async() => {
     let cart = await mod.getCartData()
     cart.forEach(val => {
-        mod.deleteDataFromCart(true, `${val.id}`)
+        mod.deleteDataFromCart(true,"0", `${val.id}`)
     })
-    
-    // document.getElementById('total_pagar').innerHTML = '$ ' + precio.toString() ;
-    
 }
 export const comprar = async () => {
     if(confirm("Deseas realizar la compra definitivamente?")){
         let cart = await mod.getCartData()
         cart.forEach(val => {
-        mod.deleteDataFromCart(true, `${val.id}`)
+        mod.deleteDataFromCart(true, "0" , `${val.id}`)
         })
         alert("Compra realizada satisfactoriamente")
     } else confirm("Esta bien :(")
@@ -64,8 +71,8 @@ export const comprar = async () => {
 export const index = async (btn) => {
     title = 'Todos los productos'
     deleteCartView(title)
-    buttonFocused(btn)
     container.innerHTML = ""
+    buttonFocused(btn)
     let hod = await mod.getAllHoodies();
     let shirt = await mod.getAllTshirts();
     let pant = await mod.getAllPants();
@@ -168,29 +175,10 @@ export const cart = async (btn) => {
                     empty_Cart()
                 } else alert("Esta bien :D")
             } else comprar()
-            
         })
     })
     } else {
         container.innerHTML = '<p>Tu carrito esta vacio :(</p>';
     }
-    
-
-    // let footer = `
-    // <div class="pay__process">
-    //     <section class="clean__cart">
-    //         <button onclick="empty_Cart()"><p>Vaciar carrito</p></button>
-    //     </section>
-    //     <section class="buy__now">
-    //         <div class="total">
-    //             <p>Total</p>
-    //             <p id="total_pagar">$ 0</p>
-    //         </div>
-    //         <button onclick="comprar()">Comprar Ahora</button>
-    //     </section>
-    // </div>`
-
     buttonFocused(btn)
-
-
 }

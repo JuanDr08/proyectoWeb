@@ -22,7 +22,7 @@ export const sendData = async (clthName, clthID) => {
                 })
                 fetch(`http://localhost:5501/carrito/${val.id}`, config)
                 break
-            }else if (val.id == cart.length){
+            }else if (val.id == cart[cart.length - 1].id){
                 config.method = "POST"
                 config.body = JSON.stringify({
                     [clthName]: clthID,
@@ -40,7 +40,7 @@ export const getCartData = async () => {
     return res;
 }
 
-export const deleteDataFromCart = async (all = false, clthName = "0" ,clthId = "0") => {
+export const deleteDataFromCart = async (all = false, clthName = "0", clthId = "0") => {
     let config = {
         method: "DELETE",
         headers: {
@@ -54,7 +54,8 @@ export const deleteDataFromCart = async (all = false, clthName = "0" ,clthId = "
         if(confirm("Estas seguro que deseas eliminar el elemento?")){
             let cart = await getCartData()
             cart.forEach(val => {
-                if(clthName in val){
+                console.log(val, clthId);
+                if(val[clthName] == clthId){
                     fetch(`http://localhost:5501/carrito/${val.id}`, config)
                 } 
             })

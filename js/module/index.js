@@ -3,7 +3,9 @@ import {
     index,
     camisetas,
     pantalones,
-    cart
+    cart,
+    actualView,
+    buttonFocused
  } from './formatter.js'
 import {
     getAllHoodies
@@ -35,5 +37,7 @@ export {
     getAllTshirts,
     sendData,
     getCartData,
-    deleteDataFromCart
+    deleteDataFromCart,
+    actualView,
+    buttonFocused
 }
