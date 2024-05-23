@@ -32,7 +32,8 @@ export class SimpleCard extends HTMLElement {
         this.price.textContent = "$ " + res.precio
         this.btn.addEventListener('click', async() => {
             let clthName = clothe + "Id"
-            await m.sendData(clthName, id)
+            await m.sendData(clthName, id, res.precio)
+            alert("Producto añadido satisfactoriamente al Carrito")
         })
     }
 
@@ -173,12 +174,15 @@ export class CartCard extends HTMLElement {
     }
     async generateACardWithCode(clothe ,id) {
         let [res] = await m.getAnyClotheByNameAndId(clothe, id)
+        let cantidad = this.cuantity.textContent
         this.src.setAttribute("src", res.imagen)
         this.name.textContent = res.nombre
         this.price.textContent = "$ " + res.precio
+        this.shadowRoot.querySelector(".sub").lastElementChild.textContent = `$ ${Number(cantidad * res.precio)}`
         this.delete.addEventListener("click", (e)=> {
             let clthName = clothe + "Id"
             m.deleteDataFromCart(false, clthName , id)
+            alert("Producto eliminado satisfactoriamente")
         })
     }
     static get observedAttributes() {

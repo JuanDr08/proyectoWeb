@@ -1,4 +1,4 @@
-export const sendData = async (clthName, clthID) => {
+export const sendData = async (clthName, clthID, price) => {
     let cart = await getCartData();
     let config = {
         headers: {
@@ -10,15 +10,18 @@ export const sendData = async (clthName, clthID) => {
         config.body = JSON.stringify({
             [clthName]: clthID,
             cantidad: 1,
+            precio: price,
             id: `${cart.length + 1}`
         })
         fetch("http://localhost:5501/carrito", config)
     }else {
         for (let val of cart) {
             if (clthName in val && clthID == val[clthName]){
+                let unidades = val.cantidad + 1
                 config.method = "PATCH"
                 config.body = JSON.stringify({
-                    cantidad: val.cantidad + 1
+                    cantidad: unidades,
+                    precio: (unidades * price)
                 })
                 fetch(`http://localhost:5501/carrito/${val.id}`, config)
                 break
@@ -27,6 +30,7 @@ export const sendData = async (clthName, clthID) => {
                 config.body = JSON.stringify({
                     [clthName]: clthID,
                     cantidad: 1,
+                    precio: price,
                     id: `${cart.length + 1}`
                 })
                 fetch("http://localhost:5501/carrito", config)
@@ -54,7 +58,6 @@ export const deleteDataFromCart = async (all = false, clthName = "0", clthId = "
         if(confirm("Estas seguro que deseas eliminar el elemento?")){
             let cart = await getCartData()
             cart.forEach(val => {
-                console.log(val, clthId);
                 if(val[clthName] == clthId){
                     fetch(`http://localhost:5501/carrito/${val.id}`, config)
                 } 

@@ -95,16 +95,5 @@
       "id": "5"
     }
   ],
-  "carrito": [
-    {
-      "id": "1",
-      "pantalonId": "1",
-      "cantidad": 2
-    },
-    {
-      "id": "2",
-      "pantalonId": "2",
-      "cantidad": 2
-    }
-  ]
+  "carrito": []
 }

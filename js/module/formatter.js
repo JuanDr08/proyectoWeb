@@ -42,6 +42,16 @@ export const actualView = (actual = "all") => {
     }
 }
 
+const totalCart = async () => {
+    let data = await mod.getCartData()
+    let subTotal = document.querySelector("#total_pagar")
+    let total = 0
+    data.forEach(val => {
+        total += val.precio
+    })
+    subTotal.textContent = `$ ${total}`
+}
+
 
 const deleteCartView = (ttl) => {
     let contenedor = document.querySelector('.body__products')
@@ -180,5 +190,7 @@ export const cart = async (btn) => {
     } else {
         container.innerHTML = '<p>Tu carrito esta vacio :(</p>';
     }
+
+    totalCart()
     buttonFocused(btn)
 }
